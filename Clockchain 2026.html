@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clockchain — A Verifiable Standard for Time</title>
+  <link rel="icon" type="image/png" href="assets/clockchain-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
+</head>
+<body>
+
+  <!-- Backdrop -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orb a" aria-hidden="true"></div>
+  <div class="bg-orb b" aria-hidden="true"></div>
+
+  <!-- ===== Nav ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#top">
+        <img class="mark" src="assets/clockchain-logo.png" alt="Clockchain" />
+        <span>Clockchain</span>
+      </a>
+      <div class="nav-links">
+        <a href="#solution">Solution</a>
+        <a href="#services">Services</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#news">News</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-socials" aria-label="Social links">
+          <a href="https://t.me/ClockchainTime" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.04 15.4 8.9 19.2c.4 0 .57-.17.77-.37l1.86-1.78 3.86 2.83c.71.39 1.21.18 1.4-.65l2.53-11.85c.23-1.04-.38-1.45-1.06-1.2L3.5 10.18c-1 .39-.99.94-.18 1.19l3.66 1.14 8.5-5.36c.4-.25.77-.11.47.14"/></svg>
+          </a>
+          <a href="https://discord.gg/clockchain" target="_blank" rel="noopener" aria-label="Discord">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+          </a>
+          <a href="https://x.com/clockchain_time" target="_blank" rel="noopener" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.967 6.817H1.677l7.73-8.835L1.254 2.25h6.829l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-cta" href="mailto:info@d4d.group">
+          Contact
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8" /></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" data-screen-label="01 Hero">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video class="hero-video" id="hero-video"
+               muted autoplay playsinline preload="auto"
+               data-hls="https://stream.mux.com/tLkHO1qZoaaQOUeVWo8hEBeGQfySP02EPS02BmnNFyXys.m3u8"></video></video>
+        <div class="hero-video-tint"></div>
+        <div class="hero-video-vignette"></div>
+        <div class="hero-video-grid"></div>
+      </div>
+
+      <div class="shell">
+        <div class="hero-eyebrow-row reveal" data-reveal="left" style="--d: 0ms">
+          <span class="hero-live-pill"><span class="live-dot"></span>LIVE</span>
+          <span class="hero-live-meta">Clockchain Network</span>
+        </div>
+
+        <div class="hero-row">
+          <div class="hero-left">
+            <h1 class="kinetic-title reveal" data-reveal="left" style="--d: 180ms">
+              <span class="line"><span class="word">Time</span> <span class="word">you</span> <span class="word">can</span></span>
+              <span class="line"><span class="word italic huge">prove</span>.</span>
+            </h1>
+
+            <p class="hero-sub reveal" data-reveal="left" style="--d: 360ms">
+              The internet runs on clocks <strong>nobody can verify</strong>. Clockchain is a decentralized,
+              cryptographically verifiable time standard — <strong>anchored on-chain every second</strong>.
+            </p>
+
+            <div class="cta-row reveal" data-reveal="left" style="--d: 520ms">
+              <a class="btn btn-primary" href="https://services.clockchain.network/" target="_blank" rel="noopener">
+                Try the Testnet
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#solution">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+                Read the Whitepaper
+              </a>
+            </div>
+
+            <div class="trusted reveal" data-reveal="left" style="--d: 680ms">
+              <div class="trusted-label">Trusted by builders</div>
+              <div class="trusted-row">
+                <div class="trusted-chip"><span class="tc-mark" style="--c: oklch(0.7 0.18 25)"></span>PENDA <span class="tc-meta">approved</span></div>
+                <div class="trusted-chip"><span class="tc-mark" style="--c: oklch(0.75 0.18 80)"></span>Certora of Neurolelle</div>
+                <div class="trusted-chip"><span class="tc-mark" style="--c: oklch(0.78 0.16 220)"></span>Sealos <span class="tc-meta">registered</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="readout-3d-wrap reveal" data-reveal="right" style="--d: 260ms">
+            <div class="readout readout-3d glass" aria-live="polite">
+              <div class="rd-head">
+                <span class="rd-live"><span class="live-dot"></span>LIVE</span>
+                <div class="rd-clockviz" aria-hidden="true">
+                  <div class="rd-clockviz-orbit a"></div>
+                  <div class="rd-clockviz-orbit b"></div>
+                  <div class="rd-clockviz-orbit c"></div>
+                  <div class="rd-clockviz-face">
+                    <div class="rd-clockviz-tick" style="--a: 0deg"></div>
+                    <div class="rd-clockviz-tick" style="--a: 90deg"></div>
+                    <div class="rd-clockviz-tick" style="--a: 180deg"></div>
+                    <div class="rd-clockviz-tick" style="--a: 270deg"></div>
+                    <div class="rd-clockviz-hand h" id="rd-cvhand-h"></div>
+                    <div class="rd-clockviz-hand m" id="rd-cvhand-m"></div>
+                    <div class="rd-clockviz-hand s" id="rd-cvhand-s"></div>
+                    <div class="rd-clockviz-pin"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rd-time-block">
+                <div class="rd-time-label">CLOCKCHAIN UTC</div>
+                <div class="rd-time" id="rd-time">00<span class="sep">:</span>00<span class="sep">:</span>00<span class="ms">.000</span></div>
+                <div class="rd-time-meta">
+                  <span id="rd-date">2026-01-01</span>
+                  <span class="dot">·</span>
+                  <span>UTC</span>
+                  <div class="rd-progress" aria-hidden="true"><span id="rd-progress-bar"></span></div>
+                </div>
+              </div>
+
+              <div class="rd-stats">
+                <div class="rd-stat">
+                  <div class="rd-stat-label">BLOCK HEIGHT</div>
+                  <div class="rd-stat-val" id="rd-height">#0</div>
+                </div>
+                <div class="rd-stat">
+                  <div class="rd-stat-label">DRIFT VS UTC <span class="rd-stat-ind"></span></div>
+                  <div class="rd-stat-val" id="rd-drift">±0.000 ms</div>
+                </div>
+                <div class="rd-stat">
+                  <div class="rd-stat-label">VALIDATORS</div>
+                  <div class="rd-stat-val rd-stat-validators">
+                    <span id="rd-validators">128</span>
+                    <svg class="rd-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/><polyline points="9 12 11 14 15 10"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rd-blocks">
+                <div class="rd-table-head">
+                  <span class="th-h">HEIGHT</span>
+                  <span class="th-t">TIMESTAMP</span>
+                  <span class="th-v">VALIDATOR</span>
+                  <span class="th-d">DRIFT</span>
+                </div>
+                <div class="rd-block-list" id="rd-block-list" role="list"></div>
+              </div>
+
+              <div class="rd-foot">
+                <span class="rd-foot-l"><span class="live-dot"></span><span id="rd-foot-text">Network secured by 128 validators</span></span>
+                <span class="rd-foot-r"><span id="rd-foot-status">Updated just now</span><span class="rd-foot-dot"></span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom horizontal stat strip -->
+      <div class="shell">
+        <div class="hero-stat-strip glass reveal" style="--d: 540ms">
+          <div class="hss-cell">
+            <div class="hss-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div class="hss-body">
+              <div class="hss-label">Block Height</div>
+              <div class="hss-val" id="hss-height">—</div>
+              <div class="hss-sub">latest block</div>
+            </div>
+          </div>
+
+          <div class="hss-cell">
+            <div class="hss-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 7 12 10 5 14 19 17 12 21 12"/></svg>
+            </div>
+            <div class="hss-body">
+              <div class="hss-label">Blocks per second</div>
+              <div class="hss-val" id="hss-bps">1.003</div>
+              <div class="hss-sub">avg over 1 min</div>
+            </div>
+          </div>
+
+          <div class="hss-cell">
+            <div class="hss-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div class="hss-body">
+              <div class="hss-label">Validators</div>
+              <div class="hss-val">128</div>
+              <div class="hss-sub">active validators</div>
+            </div>
+          </div>
+
+          <div class="hss-cell">
+            <div class="hss-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="hss-body">
+              <div class="hss-label">Uptime</div>
+              <div class="hss-val">99.99%</div>
+              <div class="hss-sub">30d rolling</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">TIMESTAMP <span class="dot"></span></span>
+        <span class="marquee-item">VERIFY <span class="dot"></span></span>
+        <span class="marquee-item">LOG <span class="dot"></span></span>
+        <span class="marquee-item">SCHEDULE <span class="dot"></span></span>
+        <span class="marquee-item">SYNCHRONIZE <span class="dot"></span></span>
+        <span class="marquee-item">EXECUTE <span class="dot"></span></span>
+        <span class="marquee-item">TIMESTAMP <span class="dot"></span></span>
+        <span class="marquee-item">VERIFY <span class="dot"></span></span>
+        <span class="marquee-item">LOG <span class="dot"></span></span>
+        <span class="marquee-item">SCHEDULE <span class="dot"></span></span>
+        <span class="marquee-item">SYNCHRONIZE <span class="dot"></span></span>
+        <span class="marquee-item">EXECUTE <span class="dot"></span></span>
+      </div>
+    </div>
+
+    <!-- ===== Issue + What is Clockchain ===== -->
+    <section class="section issues-section" data-screen-label="02 Issues">
+      <div class="issues-video-wrap" aria-hidden="true">
+        <video class="issues-video" id="issues-video"
+               muted autoplay playsinline loop preload="auto"
+               data-hls="https://stream.mux.com/Kec29dVyJgiPdtWaQtPuEiiGHkJIYQAVUJcNiIHUYeo.m3u8"></video>
+        <div class="issues-video-tint"></div>
+        <div class="issues-video-grid"></div>
+      </div>
+      <div class="shell">
+        <div class="section-head reveal">
+          <h2>Issues Around <em>Timekeeping</em> and <em>Timestamps</em>.</h2>
+          <p class="lede">
+            Existing time synchronization protocols like NTP, TAI, UTC, GPS, and timestamp protocols such as
+            ISO 8601 and RFC 3339, despite their widespread use, are susceptible to manipulation and
+            inaccuracies due to their reliance on centralized sources, the inability to verify the data and
+            a lack of a unified global standard. This discrepancy poses significant risks in sectors where
+            precise timekeeping and time-stamping is essential.
+          </p>
+        </div>
+
+        <div class="issue-wrap issue-wrap-tri">
+          <article class="issue-card feature glass-2 reveal" data-step="1">
+            <div class="num"><span class="num-dot"></span>01 · What is Clockchain?</div>
+            <h3>A new type of blockchain clock.</h3>
+            <p>
+              A new type of blockchain clock, setting a new standard of global timekeeping and timestamping.
+              A verifiable and immutable version of time, Clockchain serves critical sectors like finance,
+              supply chain, and autonomous systems.
+            </p>
+            <p>
+              With its decentralized structure and token economy the Clockchain network is a democratic
+              solution for the digital age, defining the future of time.
+            </p>
+          </article>
+
+          <article class="issue-card glass reveal" data-step="2" style="--d: 120ms">
+            <div class="num"><span class="num-dot"></span>02 · Vision</div>
+            <h3>A foundational pillar of Web3 infrastructure.</h3>
+            <p>
+              Our vision is to secure and revolutionize the integrity of time-related data through
+              blockchain technology, becoming a foundational pillar of Web3 infrastructure. We aim to
+              enable autonomous systems to operate with enhanced accountability, transparency, and trust.
+            </p>
+          </article>
+
+          <article class="issue-card glass reveal" data-step="3" style="--d: 240ms">
+            <div class="num"><span class="num-dot"></span>03 · Mission</div>
+            <h3>A new global standard for time.</h3>
+            <p>
+              The Clockchain is a time focused blockchain network. Its mission is to create a new global
+              standard for accuracy and security in timekeeping and timestamping, and integrating these
+              innovations into forthcoming Web 3.0 applications.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Solution ===== -->
+    <section class="section" id="solution" data-screen-label="03 Solution">
+      <div class="shell">
+        <div class="section-head reveal">
+          <h2>The <em>solution</em>.</h2>
+          <p class="lede">
+            Three primitives, working together. A decentralized physical network of certified time sources,
+            aggregated by AI, validated on-chain through Proof-of-Time consensus.
+          </p>
+        </div>
+
+        <div class="solution-grid">
+          <article class="sol-card glass reveal" data-tilt>
+            <div class="big-num">01</div>
+            <h4>Decentralized timestamping via DePIN.</h4>
+            <p>
+              A physical infrastructure network of global certification authorities — Safran atomic clocks,
+              NICT, GPS, atomic time sources — manages timestamping across regions for accuracy that no single
+              authority can tamper with.
+            </p>
+            <div class="tag">DePIN · Distributed sources</div>
+          </article>
+
+          <article class="sol-card glass reveal" data-tilt style="--d: 100ms">
+            <div class="big-num">02</div>
+            <h4>AI + blockchain integration.</h4>
+            <p>
+              AI models reconcile time data across heterogeneous sources, weighting and ranking inputs in real
+              time, then propagating the validated state to nodes worldwide for instant consensus.
+            </p>
+            <div class="tag">Adaptive consensus · Sub-second</div>
+          </article>
+
+          <article class="sol-card glass reveal" data-tilt style="--d: 200ms">
+            <div class="big-num">03</div>
+            <h4>Proof-of-Time consensus.</h4>
+            <p>
+              A new consensus mechanism that aggregates time data from all global sources and validates it
+              on-chain — ensuring accuracy and consistency across every block, every second.
+            </p>
+            <div class="tag">PoT · On-chain validation</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section class="section" id="services" data-screen-label="04 Services">
+      <div class="shell">
+        <div class="section-head reveal">
+          <h2>Three services. <em>One clock.</em></h2>
+          <p class="lede">
+            A complete toolkit for any product that depends on the integrity of a moment — easy to integrate,
+            instantly verifiable, decentralized by default.
+          </p>
+        </div>
+
+        <div class="services-list">
+
+          <article class="service glass reveal" data-swipe="left">
+            <p class="q">"Have you ever needed an easy way to log your data on a blockchain — and authenticate it instantly from anywhere in the world?"</p>
+            <div class="body">
+              <h4>Logging, Authentication & Timestamps</h4>
+              <p>
+                Timestamp and log data every second onto Clockchain in a simple, decentralized, cost-effective
+                way. Instantly authenticate from any device, anywhere — and never be fooled again.
+              </p>
+            </div>
+            <div class="glyph">
+              <svg viewBox="0 0 200 200" fill="none" class="auth-illu" aria-hidden="true">
+                <defs>
+                  <linearGradient id="auth-beam" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="var(--state)" stop-opacity="0"/>
+                    <stop offset="0.55" stop-color="var(--state)" stop-opacity="0.55"/>
+                    <stop offset="1" stop-color="var(--state)" stop-opacity="0"/>
+                  </linearGradient>
+                  <radialGradient id="auth-floor-glow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0" stop-color="var(--acc)" stop-opacity="0.22"/>
+                    <stop offset="1" stop-color="var(--acc)" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+
+                <!-- floor ambient glow -->
+                <ellipse cx="100" cy="178" rx="94" ry="12" fill="url(#auth-floor-glow)"/>
+
+                <!-- floor traces (data flow — green = live state) -->
+                <path class="auth-trace t1"
+                      d="M 48 144 V 170 H 100 V 164"
+                      stroke="var(--state)" stroke-width="1" fill="none"
+                      stroke-dasharray="3 4"/>
+                <path class="auth-trace t2"
+                      d="M 162 140 V 170 H 100 V 164"
+                      stroke="var(--state)" stroke-width="1" fill="none"
+                      stroke-dasharray="3 4"/>
+
+                <!-- VAULT -->
+                <g class="auth-vault" transform="translate(8 60)">
+                  <rect width="80" height="82" rx="6"
+                        stroke="var(--acc)" stroke-width="1.5"
+                        fill="oklch(0.66 0.087 248 / 0.05)"/>
+                  <rect x="4" y="4" width="72" height="74" rx="3"
+                        stroke="var(--acc)" stroke-width="0.7" opacity="0.35" fill="none"/>
+                  <!-- dial -->
+                  <circle cx="40" cy="40" r="23"
+                          stroke="var(--acc)" stroke-width="1.5"
+                          fill="oklch(0.66 0.087 248 / 0.08)"/>
+                  <circle cx="40" cy="40" r="17"
+                          stroke="var(--acc)" stroke-width="0.7" opacity="0.5"/>
+                  <g opacity="0.45">
+                    <line x1="40" y1="18" x2="40" y2="21" stroke="var(--acc)" stroke-width="1"/>
+                    <line x1="62" y1="40" x2="59" y2="40" stroke="var(--acc)" stroke-width="1"/>
+                    <line x1="40" y1="62" x2="40" y2="59" stroke="var(--acc)" stroke-width="1"/>
+                    <line x1="18" y1="40" x2="21" y2="40" stroke="var(--acc)" stroke-width="1"/>
+                  </g>
+                  <g class="auth-needle">
+                    <line x1="40" y1="40" x2="40" y2="22"
+                          stroke="var(--acc)" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="40" cy="22" r="2" fill="oklch(0.97 0.005 90)"/>
+                  </g>
+                  <circle cx="40" cy="40" r="2.5" fill="var(--acc)"/>
+                  <circle cx="40" cy="40" r="1" fill="oklch(0.97 0.005 90)"/>
+                  <rect x="22" y="70" width="36" height="3" rx="1.5" fill="var(--acc)" opacity="0.5"/>
+                  <g opacity="0.55">
+                    <circle cx="8" cy="8" r="1.4" fill="var(--acc)"/>
+                    <circle cx="72" cy="8" r="1.4" fill="var(--acc)"/>
+                    <circle cx="8" cy="74" r="1.4" fill="var(--acc)"/>
+                    <circle cx="72" cy="74" r="1.4" fill="var(--acc)"/>
+                  </g>
+                </g>
+
+                <!-- light beams above servers -->
+                <rect class="auth-beam b1" x="111" y="0" width="14" height="42" fill="url(#auth-beam)"/>
+                <rect class="auth-beam b2" x="134" y="0" width="14" height="42" fill="url(#auth-beam)"/>
+                <rect class="auth-beam b3" x="157" y="0" width="14" height="42" fill="url(#auth-beam)"/>
+
+                <!-- SERVERS -->
+                <g class="srv srv-1" transform="translate(108 36)">
+                  <rect width="20" height="104" rx="2"
+                        stroke="var(--acc)" stroke-width="1"
+                        fill="oklch(0.16 0.012 248 / 0.72)"/>
+                  <g class="led-row"><rect x="2" y="6"  width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.18)"/><text x="10" y="14" class="ts" data-srv="0">17:33:02</text></g>
+                  <g class="led-row"><rect x="2" y="20" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.08)"/></g>
+                  <g class="led-row"><rect x="2" y="34" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.12)"/></g>
+                  <g class="led-row"><rect x="2" y="48" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.06)"/></g>
+                  <g class="led-row"><rect x="2" y="62" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.1)"/></g>
+                  <g class="led-row"><rect x="2" y="76" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.05)"/></g>
+                  <g class="led-row"><rect x="2" y="90" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.12)"/></g>
+                </g>
+                <g class="srv srv-2" transform="translate(131 30)">
+                  <rect width="20" height="110" rx="2"
+                        stroke="var(--state)" stroke-width="1"
+                        fill="oklch(0.14 0.012 150 / 0.72)"/>
+                  <g class="led-row"><rect x="2" y="6"  width="16" height="11" rx="1" fill="oklch(0.72 0.255 142 / 0.18)"/><text x="10" y="14" class="ts" data-srv="1">04:29:18</text></g>
+                  <g class="led-row"><rect x="2" y="20" width="16" height="11" rx="1" fill="oklch(0.72 0.255 142 / 0.22)"/></g>
+                  <g class="led-row"><rect x="2" y="34" width="16" height="11" rx="1" fill="oklch(0.72 0.255 142 / 0.08)"/></g>
+                  <g class="led-row"><rect x="2" y="48" width="16" height="11" rx="1" fill="oklch(0.72 0.255 142 / 0.14)"/></g>
+                  <g class="led-row"><rect x="2" y="62" width="16" height="11" rx="1" fill="oklch(0.72 0.255 142 / 0.06)"/></g>
+                  <g class="led-row"><rect x="2" y="76" width="16" height="11" rx="1" fill="oklch(0.72 0.255 142 / 0.16)"/></g>
+                  <g class="led-row"><rect x="2" y="90" width="16" height="11" rx="1" fill="oklch(0.72 0.255 142 / 0.08)"/></g>
+                </g>
+                <g class="srv srv-3" transform="translate(154 36)">
+                  <rect width="20" height="104" rx="2"
+                        stroke="var(--acc)" stroke-width="1"
+                        fill="oklch(0.16 0.012 248 / 0.72)"/>
+                  <g class="led-row"><rect x="2" y="6"  width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.06)"/><text x="10" y="14" class="ts" data-srv="2">16:32:54</text></g>
+                  <g class="led-row"><rect x="2" y="20" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.1)"/></g>
+                  <g class="led-row"><rect x="2" y="34" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.18)"/></g>
+                  <g class="led-row"><rect x="2" y="48" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.06)"/></g>
+                  <g class="led-row"><rect x="2" y="62" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.12)"/></g>
+                  <g class="led-row"><rect x="2" y="76" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.05)"/></g>
+                  <g class="led-row"><rect x="2" y="90" width="16" height="11" rx="1" fill="oklch(0.66 0.087 248 / 0.1)"/></g>
+                </g>
+
+                <!-- PADLOCK -->
+                <g class="auth-padlock" transform="translate(89 148)">
+                  <path d="M 4 8 V 5 a 7 7 0 0 1 14 0 V 8"
+                        stroke="var(--acc)" stroke-width="1.6"
+                        fill="none" stroke-linecap="round"/>
+                  <rect width="22" height="18" rx="2.5" y="8"
+                        fill="oklch(0.66 0.087 248 / 0.18)"
+                        stroke="var(--acc)" stroke-width="1.2"/>
+                  <circle cx="11" cy="15.5" r="2" fill="oklch(0.97 0.005 90)"/>
+                  <rect x="10.2" y="15" width="1.6" height="6" fill="oklch(0.97 0.005 90)"/>
+                </g>
+              </svg>
+            </div>
+          </article>
+
+          <article class="service glass reveal" data-swipe="right" style="--d: 150ms">
+            <p class="q">"Are you worried your scheduled smart contracts won't execute on time in critical situations?"</p>
+            <div class="body">
+              <h4>Smart Contract Scheduling & Execution</h4>
+              <p>
+                Seamlessly schedule and execute critical services with the first verifiable blockchain time —
+                a smart contract scheduling and execution system you can trust. Never miss a deadline again.
+              </p>
+            </div>
+            <div class="glyph">
+              <svg viewBox="0 0 200 200" fill="none" class="sched-illu" aria-hidden="true">
+                <defs>
+                  <radialGradient id="sched-floor" cx="50%" cy="50%" r="50%">
+                    <stop offset="0" stop-color="var(--state)" stop-opacity="0.22"/>
+                    <stop offset="1" stop-color="var(--state)" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="100" cy="180" rx="80" ry="10" fill="url(#sched-floor)"/>
+
+                <!-- Background scheduling cards (stacked, angled) -->
+                <g class="sched-card sc-1" transform="translate(14 16) rotate(-3 50 22)">
+                  <rect width="82" height="42" rx="3"
+                        fill="oklch(0.18 0.012 248 / 0.78)"
+                        stroke="var(--acc)" stroke-width="0.8"/>
+                  <rect x="6" y="8" width="24" height="5" rx="1.5" fill="var(--acc)" opacity="0.7"/>
+                  <rect x="6" y="20" width="50" height="3.5" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.45"/>
+                  <rect x="6" y="28" width="36" height="3.5" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.28"/>
+                </g>
+
+                <g class="sched-card sc-2" transform="translate(108 12) rotate(3 50 22)">
+                  <rect width="82" height="42" rx="3"
+                        fill="oklch(0.18 0.012 248 / 0.78)"
+                        stroke="var(--acc)" stroke-width="0.8"/>
+                  <!-- Clockchain pill (green = live) -->
+                  <rect x="6" y="6" width="50" height="11" rx="5.5"
+                        fill="oklch(0.72 0.255 142 / 0.16)"
+                        stroke="var(--state)" stroke-width="0.7"/>
+                  <text x="11" y="14" font-family="Instrument Serif, serif" font-style="italic" font-size="7" fill="var(--state)">Clockchain</text>
+                  <rect x="6" y="22" width="42" height="3.5" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.5"/>
+                  <rect x="6" y="30" width="56" height="3.5" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.32"/>
+                </g>
+
+                <g class="sched-card sc-3" transform="translate(8 60) rotate(-2 32 16)">
+                  <rect width="64" height="32" rx="3"
+                        fill="oklch(0.18 0.012 248 / 0.78)"
+                        stroke="var(--acc)" stroke-width="0.7"/>
+                  <rect x="5" y="6" width="20" height="4.5" rx="1.5" fill="var(--acc)" opacity="0.55"/>
+                  <rect x="5" y="15" width="48" height="3" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.35"/>
+                  <rect x="5" y="22" width="34" height="3" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.22"/>
+                </g>
+
+                <g class="sched-card sc-4" transform="translate(126 56) rotate(2 32 16)">
+                  <rect width="64" height="36" rx="3"
+                        fill="oklch(0.18 0.012 248 / 0.78)"
+                        stroke="var(--acc)" stroke-width="0.7"/>
+                  <circle class="sched-dot" cx="56" cy="9" r="2.5" fill="var(--state)"/>
+                  <rect x="5" y="6" width="24" height="4.5" rx="1.5" fill="var(--acc)" opacity="0.6"/>
+                  <rect x="5" y="16" width="46" height="3" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.4"/>
+                  <rect x="5" y="23" width="34" height="3" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.25"/>
+                </g>
+
+                <!-- Alarm clock (foreground) -->
+                <g class="alarm-clock" transform="translate(100 132)">
+                  <ellipse cx="0" cy="40" rx="30" ry="3" fill="var(--acc)" opacity="0.22"/>
+
+                  <!-- bells (behind) — shakes around clock-top -->
+                  <g class="alarm-bells">
+                    <ellipse cx="-22" cy="-37" rx="9" ry="9" fill="oklch(0.97 0.005 90)" stroke="var(--acc)" stroke-width="1"/>
+                    <ellipse cx="22" cy="-37" rx="9" ry="9" fill="oklch(0.97 0.005 90)" stroke="var(--acc)" stroke-width="1"/>
+                    <line x1="-16" y1="-30" x2="-11" y2="-19" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="16" y1="-30" x2="11" y2="-19" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="-22" cy="-37" r="2" fill="var(--state)"/>
+                    <circle cx="22" cy="-37" r="2" fill="var(--state)"/>
+                    <path d="M -20 -45 Q 0 -55 20 -45" stroke="var(--acc)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                    <animateTransform attributeName="transform" type="rotate"
+                                      values="0; -4; 0; 4; 0"
+                                      keyTimes="0; 0.15; 0.3; 0.45; 1"
+                                      dur="5s" repeatCount="indefinite"/>
+                  </g>
+
+                  <!-- clock face -->
+                  <circle r="28" fill="oklch(0.14 0.06 142 / 0.92)" stroke="var(--state)" stroke-width="2"/>
+                  <circle r="24" fill="oklch(0.16 0.05 142 / 0.5)"/>
+
+                  <!-- markers + numbers -->
+                  <g opacity="0.9">
+                    <line x1="0" y1="-20" x2="0" y2="-23" stroke="var(--state)" stroke-width="1.5"/>
+                    <line x1="20" y1="0" x2="23" y2="0" stroke="var(--state)" stroke-width="1.5"/>
+                    <line x1="0" y1="20" x2="0" y2="23" stroke="var(--state)" stroke-width="1.5"/>
+                    <line x1="-20" y1="0" x2="-23" y2="0" stroke="var(--state)" stroke-width="1.5"/>
+                    <text x="0" y="-13" font-family="JetBrains Mono, monospace" font-size="6" fill="var(--state)" text-anchor="middle" font-weight="600">12</text>
+                    <text x="15" y="2" font-family="JetBrains Mono, monospace" font-size="6" fill="var(--state)" text-anchor="middle" font-weight="600">3</text>
+                    <text x="0" y="18" font-family="JetBrains Mono, monospace" font-size="6" fill="var(--state)" text-anchor="middle" font-weight="600">6</text>
+                    <text x="-15" y="2" font-family="JetBrains Mono, monospace" font-size="6" fill="var(--state)" text-anchor="middle" font-weight="600">9</text>
+                  </g>
+
+                  <!-- hands — SMIL rotations pivot around local (0,0) = clock center -->
+                  <line class="hand hour"   x1="0" y1="0" x2="0" y2="-12" stroke="oklch(0.97 0.005 90)" stroke-width="2.5" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="864s" repeatCount="indefinite"/>
+                  </line>
+                  <line class="hand minute" x1="0" y1="0" x2="0" y2="-18" stroke="oklch(0.97 0.005 90)" stroke-width="1.5" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="72s" repeatCount="indefinite"/>
+                  </line>
+                  <line class="hand second" x1="0" y1="0" x2="0" y2="-22" stroke="var(--state)" stroke-width="1" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+                  </line>
+                  <circle r="2" fill="var(--state)"/>
+
+                  <!-- feet -->
+                  <line x1="-20" y1="25" x2="-26" y2="34" stroke="var(--acc)" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="20" y1="25" x2="26" y2="34" stroke="var(--acc)" stroke-width="2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+          </article>
+
+          <article class="service glass reveal" data-swipe="left" style="--d: 300ms">
+            <p class="q">"Do you ever wonder if the timestamp you're using is actually correct?"</p>
+            <div class="body">
+              <h4>Timestamp API — Verifiable Blockchain Time</h4>
+              <p>
+                UTC, GPS, TAI, ISO 8601, RFC 3339 are inconsistent and unreliable. With Clockchain's
+                decentralized blockchain-based timestamp API, access, verify, and stamp anything — every
+                second, on any device. Always know what time it is.
+              </p>
+            </div>
+            <div class="glyph">
+              <svg viewBox="0 0 200 200" fill="none" class="api-illu" aria-hidden="true">
+                <defs>
+                  <radialGradient id="api-floor" cx="50%" cy="50%" r="50%">
+                    <stop offset="0" stop-color="var(--state)" stop-opacity="0.22"/>
+                    <stop offset="1" stop-color="var(--state)" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="api-clock-face" cx="35%" cy="30%">
+                    <stop offset="0" stop-color="oklch(0.28 0.1 142 / 0.95)"/>
+                    <stop offset="1" stop-color="oklch(0.1 0.04 142 / 0.95)"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="100" cy="180" rx="80" ry="10" fill="url(#api-floor)"/>
+
+                <!-- Connection lines between clocks (API mesh) -->
+                <g class="api-mesh" opacity="0.45">
+                  <line x1="62" y1="120" x2="118" y2="92" stroke="var(--state)" stroke-width="0.7" stroke-dasharray="2 3"/>
+                  <line x1="118" y1="92" x2="78" y2="58" stroke="var(--state)" stroke-width="0.7" stroke-dasharray="2 3"/>
+                  <line x1="62" y1="120" x2="78" y2="58" stroke="var(--state)" stroke-width="0.7" stroke-dasharray="2 3"/>
+                </g>
+
+                <!-- Clock 3 (back, smallest) -->
+                <g class="api-clock c3" transform="translate(78 58)">
+                  <circle r="20" fill="url(#api-clock-face)" stroke="var(--state)" stroke-width="1.3"/>
+                  <circle r="17" fill="oklch(0.16 0.05 142 / 0.6)" stroke="var(--state)" stroke-width="0.5" opacity="0.6"/>
+                  <g opacity="0.7">
+                    <line x1="0" y1="-14" x2="0" y2="-16" stroke="var(--state)" stroke-width="1"/>
+                    <line x1="14" y1="0" x2="16" y2="0" stroke="var(--state)" stroke-width="1"/>
+                    <line x1="0" y1="14" x2="0" y2="16" stroke="var(--state)" stroke-width="1"/>
+                    <line x1="-14" y1="0" x2="-16" y2="0" stroke="var(--state)" stroke-width="1"/>
+                  </g>
+                  <line x1="0" y1="0" x2="0" y2="-12" stroke="oklch(0.97 0.005 90)" stroke-width="1.4" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="36s" repeatCount="indefinite"/>
+                  </line>
+                  <line x1="0" y1="0" x2="9" y2="4" stroke="oklch(0.97 0.005 90)" stroke-width="1.4" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="432s" repeatCount="indefinite"/>
+                  </line>
+                  <circle r="1.5" fill="var(--state)"/>
+                  <g transform="translate(13 -12)">
+                    <g>
+                      <circle r="5.5" fill="var(--state)"/>
+                      <path d="M -2.5 0 L -0.5 2 L 3 -1.8" stroke="oklch(0.12 0.01 88)" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                      <animateTransform attributeName="transform" type="scale" values="1; 1.2; 1" dur="2.4s" repeatCount="indefinite" begin="-1.6s"/>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Clock 1 (front-left, larger) -->
+                <g class="api-clock c1" transform="translate(62 120)">
+                  <circle r="26" fill="url(#api-clock-face)" stroke="var(--state)" stroke-width="1.6"/>
+                  <circle r="22" fill="oklch(0.16 0.05 142 / 0.6)" stroke="var(--state)" stroke-width="0.6" opacity="0.6"/>
+                  <g opacity="0.85">
+                    <line x1="0" y1="-18" x2="0" y2="-21" stroke="var(--state)" stroke-width="1.2"/>
+                    <line x1="18" y1="0" x2="21" y2="0" stroke="var(--state)" stroke-width="1.2"/>
+                    <line x1="0" y1="18" x2="0" y2="21" stroke="var(--state)" stroke-width="1.2"/>
+                    <line x1="-18" y1="0" x2="-21" y2="0" stroke="var(--state)" stroke-width="1.2"/>
+                  </g>
+                  <line x1="0" y1="0" x2="0" y2="-16" stroke="oklch(0.97 0.005 90)" stroke-width="1.6" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
+                  </line>
+                  <line x1="0" y1="0" x2="11" y2="5" stroke="oklch(0.97 0.005 90)" stroke-width="1.6" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="480s" repeatCount="indefinite"/>
+                  </line>
+                  <circle r="2" fill="var(--state)"/>
+                  <g transform="translate(17 -16)">
+                    <g>
+                      <circle r="6.5" fill="var(--state)"/>
+                      <path d="M -3 0 L -0.5 2.5 L 3.5 -2.2" stroke="oklch(0.12 0.01 88)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                      <animateTransform attributeName="transform" type="scale" values="1; 1.2; 1" dur="2.4s" repeatCount="indefinite"/>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Clock 2 (mid-right) -->
+                <g class="api-clock c2" transform="translate(118 92)">
+                  <circle r="22" fill="url(#api-clock-face)" stroke="var(--state)" stroke-width="1.4"/>
+                  <circle r="18" fill="oklch(0.16 0.05 142 / 0.6)" stroke="var(--state)" stroke-width="0.5" opacity="0.6"/>
+                  <g opacity="0.8">
+                    <line x1="0" y1="-15" x2="0" y2="-17" stroke="var(--state)" stroke-width="1"/>
+                    <line x1="15" y1="0" x2="17" y2="0" stroke="var(--state)" stroke-width="1"/>
+                    <line x1="0" y1="15" x2="0" y2="17" stroke="var(--state)" stroke-width="1"/>
+                    <line x1="-15" y1="0" x2="-17" y2="0" stroke="var(--state)" stroke-width="1"/>
+                  </g>
+                  <line x1="0" y1="0" x2="0" y2="-13" stroke="oklch(0.97 0.005 90)" stroke-width="1.4" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="34s" repeatCount="indefinite"/>
+                  </line>
+                  <line x1="0" y1="0" x2="9" y2="4" stroke="oklch(0.97 0.005 90)" stroke-width="1.4" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="408s" repeatCount="indefinite"/>
+                  </line>
+                  <circle r="1.8" fill="var(--state)"/>
+                  <g transform="translate(14 -14)">
+                    <g>
+                      <circle r="5.5" fill="var(--state)"/>
+                      <path d="M -2.5 0 L -0.5 2 L 3 -1.8" stroke="oklch(0.12 0.01 88)" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                      <animateTransform attributeName="transform" type="scale" values="1; 1.2; 1" dur="2.4s" repeatCount="indefinite" begin="-0.8s"/>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Stamp — gentle bob -->
+                <g transform="translate(150 50)">
+                  <g class="api-stamp">
+                    <ellipse cx="0" cy="-22" rx="12" ry="16"
+                             fill="oklch(0.18 0.012 248)" stroke="var(--acc)" stroke-width="1"/>
+                    <ellipse cx="-4" cy="-30" rx="3" ry="5" fill="oklch(0.4 0.03 248 / 0.55)"/>
+                    <rect x="-3.5" y="-8" width="7" height="6" fill="oklch(0.18 0.012 248)" stroke="var(--acc)" stroke-width="0.8"/>
+                    <ellipse cx="0" cy="0" rx="14" ry="5"
+                             fill="oklch(0.18 0.012 248)" stroke="var(--acc)" stroke-width="1"/>
+                    <ellipse cx="0" cy="6" rx="10" ry="2" fill="var(--state)" opacity="0.35"/>
+                    <animateTransform attributeName="transform" type="translate"
+                                      values="0,0; 0,6; 0,0" dur="2.2s" repeatCount="indefinite"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Ecosystem ===== -->
+    <section class="section" id="ecosystem" data-screen-label="05 Ecosystem">
+      <div class="shell">
+        <div class="section-head reveal">
+          <h2>About the <em>Ecosystem</em>.</h2>
+          <p class="lede">We use cutting-edge AI technology and the DePIN system to build a perpetually circulating ecosystem. Accurate time stamps are necessary as digitalization advances, and by using $CCTT tokens, all countries, regions, companies, and individuals will be able to receive the services they need.</p>
+        </div>
+
+        <div class="eco-wrap">
+          <div class="eco-visual reveal">
+            <svg class="earth-illu" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <radialGradient id="earth-grad" cx="38%" cy="32%">
+                  <stop offset="0" stop-color="oklch(0.5 0.16 220)"/>
+                  <stop offset="0.45" stop-color="oklch(0.3 0.12 230)"/>
+                  <stop offset="0.85" stop-color="oklch(0.15 0.07 240)"/>
+                  <stop offset="1" stop-color="oklch(0.08 0.03 240)"/>
+                </radialGradient>
+                <radialGradient id="atmos-glow" cx="50%" cy="50%">
+                  <stop offset="0.83" stop-color="var(--state)" stop-opacity="0"/>
+                  <stop offset="0.93" stop-color="var(--state)" stop-opacity="0.35"/>
+                  <stop offset="1" stop-color="var(--state)" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="sat-glow">
+                  <stop offset="0" stop-color="var(--state)" stop-opacity="0.5"/>
+                  <stop offset="1" stop-color="var(--state)" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Stars surrounding the planet -->
+              <g class="earth-stars" fill="oklch(0.97 0.005 90)">
+                <circle cx="40" cy="60" r="1"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
+                <circle cx="90" cy="120" r="0.7"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.2s" repeatCount="indefinite" begin="-0.8s"/></circle>
+                <circle cx="160" cy="50" r="0.9"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.8s" repeatCount="indefinite" begin="-1.3s"/></circle>
+                <circle cx="220" cy="20" r="0.6"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.4s" repeatCount="indefinite" begin="-2s"/></circle>
+                <circle cx="300" cy="60" r="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" repeatCount="indefinite" begin="-1.5s"/></circle>
+                <circle cx="380" cy="35" r="1.1"><animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" begin="-0.4s"/></circle>
+                <circle cx="450" cy="100" r="0.7"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.6s" repeatCount="indefinite" begin="-2.5s"/></circle>
+                <circle cx="30" cy="180" r="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.7s" repeatCount="indefinite" begin="-1.8s"/></circle>
+                <circle cx="470" cy="200" r="0.6"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.1s" repeatCount="indefinite" begin="-0.6s"/></circle>
+                <circle cx="25" cy="280" r="0.7"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.9s" repeatCount="indefinite" begin="-2.2s"/></circle>
+                <circle cx="480" cy="320" r="0.9"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite" begin="-1s"/></circle>
+                <circle cx="120" cy="30" r="0.5"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite" begin="-1.7s"/></circle>
+                <circle cx="350" cy="15" r="0.7"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" repeatCount="indefinite" begin="-0.3s"/></circle>
+                <circle cx="60" cy="380" r="0.6"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.3s" repeatCount="indefinite" begin="-2.4s"/></circle>
+                <circle cx="35" cy="440" r="0.9"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite" begin="-1.1s"/></circle>
+                <circle cx="450" cy="400" r="0.8"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.1s" repeatCount="indefinite" begin="-0.7s"/></circle>
+                <circle cx="480" cy="465" r="0.7"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.7s" repeatCount="indefinite" begin="-1.9s"/></circle>
+                <circle cx="100" cy="470" r="0.6"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.4s" repeatCount="indefinite" begin="-0.4s"/></circle>
+                <circle cx="220" cy="485" r="1"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite" begin="-2.1s"/></circle>
+                <circle cx="350" cy="475" r="0.7"><animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="-1.4s"/></circle>
+                <circle cx="395" cy="445" r="0.5"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.7s" repeatCount="indefinite" begin="-0.9s"/></circle>
+                <circle cx="280" cy="445" r="0.6"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.8s" repeatCount="indefinite" begin="-2.6s"/></circle>
+              </g>
+
+              <!-- atmospheric halo -->
+              <circle cx="250" cy="250" r="190" fill="url(#atmos-glow)"/>
+
+              <!-- orbital path guide -->
+              <ellipse cx="250" cy="250" rx="210" ry="155"
+                       stroke="var(--state)" stroke-width="1" stroke-dasharray="3 6"
+                       fill="none" opacity="0.45"/>
+
+              <!-- Earth -->
+              <g class="earth-body">
+                <circle cx="250" cy="250" r="150" fill="url(#earth-grad)"
+                        stroke="var(--state)" stroke-width="1" stroke-opacity="0.55"/>
+
+                <!-- continents (abstract green patches) -->
+                <g class="continents" opacity="0.55">
+                  <path d="M 196 192 Q 215 180 240 186 Q 268 194 295 186 Q 312 198 305 217 Q 290 232 268 232 Q 240 234 215 224 Q 200 214 196 202 Z"
+                        fill="oklch(0.5 0.16 142)"/>
+                  <path d="M 218 260 Q 232 256 240 270 Q 245 292 238 320 Q 228 335 218 325 Q 206 310 210 290 Q 212 272 218 260 Z"
+                        fill="oklch(0.46 0.14 142)"/>
+                  <path d="M 170 230 Q 183 220 193 230 Q 200 260 187 290 Q 173 306 165 290 Q 159 270 163 250 Z"
+                        fill="oklch(0.42 0.13 142)"/>
+                  <ellipse cx="328" cy="255" rx="14" ry="9" fill="oklch(0.48 0.15 142)"/>
+                  <ellipse cx="298" cy="318" rx="10" ry="7" fill="oklch(0.44 0.13 142)"/>
+                  <ellipse cx="340" cy="305" rx="8" ry="5" fill="oklch(0.46 0.14 142)"/>
+                </g>
+
+                <!-- latitude rings -->
+                <g stroke="var(--state)" stroke-width="0.5" fill="none" opacity="0.28">
+                  <ellipse cx="250" cy="250" rx="150" ry="42"/>
+                  <ellipse cx="250" cy="250" rx="150" ry="90"/>
+                  <ellipse cx="250" cy="250" rx="150" ry="130"/>
+                </g>
+                <!-- meridian rings -->
+                <g stroke="var(--state)" stroke-width="0.5" fill="none" opacity="0.28">
+                  <ellipse cx="250" cy="250" rx="46" ry="150"/>
+                  <ellipse cx="250" cy="250" rx="98" ry="150"/>
+                  <ellipse cx="250" cy="250" rx="135" ry="150"/>
+                </g>
+
+                <!-- slow earth rotation -->
+                <animateTransform attributeName="transform" type="rotate"
+                                  from="0 250 250" to="360 250 250"
+                                  dur="180s" repeatCount="indefinite"/>
+              </g>
+
+              <!-- Ground stations -->
+              <g class="ground-stations">
+                <g transform="translate(178 165)">
+                  <circle r="3" fill="var(--acc)"/>
+                  <circle r="3" fill="var(--acc)" opacity="0.8">
+                    <animate attributeName="r" values="3;18;3" dur="3s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
+                  </circle>
+                </g>
+                <g transform="translate(315 198)">
+                  <circle r="3" fill="var(--acc)"/>
+                  <circle r="3" fill="var(--acc)" opacity="0.8">
+                    <animate attributeName="r" values="3;18;3" dur="3s" repeatCount="indefinite" begin="-1s"/>
+                    <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite" begin="-1s"/>
+                  </circle>
+                </g>
+                <g transform="translate(248 300)">
+                  <circle r="3" fill="var(--acc)"/>
+                  <circle r="3" fill="var(--acc)" opacity="0.8">
+                    <animate attributeName="r" values="3;18;3" dur="3s" repeatCount="indefinite" begin="-2s"/>
+                    <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite" begin="-2s"/>
+                  </circle>
+                </g>
+                <g transform="translate(195 270)">
+                  <circle r="3" fill="var(--acc)"/>
+                  <circle r="3" fill="var(--acc)" opacity="0.8">
+                    <animate attributeName="r" values="3;18;3" dur="3s" repeatCount="indefinite" begin="-1.5s"/>
+                    <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite" begin="-1.5s"/>
+                  </circle>
+                </g>
+              </g>
+
+              <!-- Mesh between ground stations -->
+              <g stroke="var(--state)" stroke-width="0.7" fill="none" opacity="0.5">
+                <path class="eco-mesh" d="M 178 165 Q 245 195 315 198" stroke-dasharray="3 4"/>
+                <path class="eco-mesh" d="M 315 198 Q 285 250 248 300" stroke-dasharray="3 4"/>
+                <path class="eco-mesh" d="M 248 300 Q 220 235 178 165" stroke-dasharray="3 4"/>
+                <path class="eco-mesh" d="M 178 165 Q 190 220 195 270" stroke-dasharray="3 4"/>
+                <path class="eco-mesh" d="M 195 270 L 248 300" stroke-dasharray="3 4"/>
+              </g>
+
+              <!-- Satellite -->
+              <g class="satellite">
+                <circle r="22" fill="url(#sat-glow)"/>
+                <rect x="-22" y="-2.5" width="14" height="5" fill="oklch(0.25 0.1 230)" stroke="var(--state)" stroke-width="0.6"/>
+                <line x1="-19" y1="-2.5" x2="-19" y2="2.5" stroke="var(--state)" stroke-width="0.3"/>
+                <line x1="-15" y1="-2.5" x2="-15" y2="2.5" stroke="var(--state)" stroke-width="0.3"/>
+                <line x1="-11" y1="-2.5" x2="-11" y2="2.5" stroke="var(--state)" stroke-width="0.3"/>
+                <rect x="8" y="-2.5" width="14" height="5" fill="oklch(0.25 0.1 230)" stroke="var(--state)" stroke-width="0.6"/>
+                <line x1="11" y1="-2.5" x2="11" y2="2.5" stroke="var(--state)" stroke-width="0.3"/>
+                <line x1="15" y1="-2.5" x2="15" y2="2.5" stroke="var(--state)" stroke-width="0.3"/>
+                <line x1="19" y1="-2.5" x2="19" y2="2.5" stroke="var(--state)" stroke-width="0.3"/>
+                <rect x="-6" y="-4" width="12" height="8" rx="1"
+                      fill="oklch(0.95 0.01 90)" stroke="var(--acc)" stroke-width="0.7"/>
+                <path d="M -3 -6 Q 0 -10 3 -6 L 2 -4 L -2 -4 Z"
+                      fill="oklch(0.85 0.01 90)" stroke="var(--acc)" stroke-width="0.4"/>
+                <line x1="0" y1="-10" x2="0" y2="-13" stroke="var(--acc)" stroke-width="0.6"/>
+                <path d="M 0 4 L -10 22 L 10 22 Z" fill="var(--state)" opacity="0.22">
+                  <animate attributeName="opacity" values="0.1;0.35;0.1" dur="1.4s" repeatCount="indefinite"/>
+                </path>
+                <path d="M 0 4 L -6 16 L 6 16 Z" fill="var(--state)" opacity="0.4">
+                  <animate attributeName="opacity" values="0.25;0.55;0.25" dur="1.4s" repeatCount="indefinite" begin="-0.7s"/>
+                </path>
+
+                <!-- orbit (elliptical) around earth center (250, 250) -->
+                <animateMotion
+                  path="M 40,250 A 210,155 0 1,1 460,250 A 210,155 0 1,1 40,250"
+                  dur="22s" repeatCount="indefinite" rotate="auto"/>
+              </g>
+            </svg>
+
+            <!-- Floating labels (positioned over ground stations) -->
+            <div class="eco-label" style="left:33%; top:30%">NICT · JP</div>
+            <div class="eco-label" style="left:63%; top:36%">SAFRAN</div>
+            <div class="eco-label" style="left:51%; top:62%">NTP · USA</div>
+            <div class="eco-label" style="left:36%; top:55%">GPS · L1</div>
+          </div>
+
+          <div class="eco-text glass reveal" style="--d: 120ms">
+            <div>
+              <div class="eyebrow" style="margin-bottom:18px">$CCTT marketplace</div>
+              <h3>Time, distributed — and paid for.</h3>
+            </div>
+            <div class="eco-stats">
+              <div class="stat"><div class="v">$CCTT</div><div class="l">Native token</div></div>
+              <div class="stat"><div class="v">∞</div><div class="l">Nodes (open)</div></div>
+              <div class="stat"><div class="v">1s</div><div class="l">Block time</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Roadmap ===== -->
+    <section class="section" id="roadmap" data-screen-label="06 Roadmap">
+      <div class="shell">
+        <div class="section-head reveal">
+          <h2>Roadmap.</h2>
+          <p class="lede">
+            From private round to mainnet to international patent expansion — the year that defines the new
+            standard.
+          </p>
+        </div>
+
+        <div class="roadmap">
+          <div class="year-marker reveal">
+            <div class="year">2026</div>
+            <div class="yr-sub">Milestone · Mainnet year</div>
+          </div>
+
+          <div class="quarters">
+            <article class="quarter glass reveal" data-swipe="right" style="--d: 0ms">
+              <div class="q-tag">Q1<span class="qsub">Foundation</span></div>
+              <ul>
+                <li>Private Round</li>
+                <li>Compliance & certifications: SOC 1&2, MiFID, CAT, ISO 20022, 8583, 27001, 18245, 10962, 31000, 22301</li>
+                <li>Initial Web3 pilots</li>
+                <li>Solana integration</li>
+              </ul>
+            </article>
+
+            <article class="quarter glass reveal" data-swipe="right" style="--d: 200ms">
+              <div class="q-tag">Q2<span class="qsub">Public testnet</span></div>
+              <ul>
+                <li>Launch Public TestNet</li>
+                <li>Node rewards live</li>
+                <li>Expand pilots across enterprise</li>
+                <li>Chainlink integration</li>
+                <li>Canton Network</li>
+              </ul>
+            </article>
+
+            <article class="quarter glass reveal" data-swipe="right" style="--d: 400ms">
+              <div class="q-tag">Q3<span class="qsub">Mainnet & TGE</span></div>
+              <ul>
+                <li>TGE and Mainnet launch</li>
+                <li>Node participation open to public</li>
+                <li>Avalanche integration</li>
+                <li>Safran Atomic Clocks live as time source</li>
+                <li>World Event Logging service</li>
+              </ul>
+            </article>
+
+            <article class="quarter glass reveal" data-swipe="right" style="--d: 600ms">
+              <div class="q-tag">Q4<span class="qsub">Scale</span></div>
+              <ul>
+                <li>Staking goes live</li>
+                <li>HyperLedger integration</li>
+                <li>Expand patent portfolio (international)</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== News & Media ===== -->
+    <section class="section press" id="news" data-screen-label="07 News">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="press-ticker">
+            <span class="tick-dot"></span>
+            <span>LATEST</span>
+            <span class="tick-sep">·</span>
+            <span>5 STORIES</span>
+            <span class="tick-sep">·</span>
+            <span>UPDATED 2026.02.24</span>
+          </div>
+          <h2>News &amp; <em>Media</em>.</h2>
+          <p class="lede">
+            First-party updates and research from the Clockchain team — and press coverage from across the
+            broader network.
+          </p>
+        </div>
+
+        <!-- News (in-house) -->
+        <div class="press-subhead reveal">
+          <div class="press-subhead-l">
+            <span class="press-num">01</span>
+            <h3>News</h3>
+            <span class="press-pill press-pill--internal">From the team</span>
+          </div>
+          <div class="press-rule"></div>
+          <span class="press-count">2 entries</span>
+        </div>
+
+        <div class="press-grid press-grid--news">
+          <article class="press-card press-card--lead news-card glass reveal" data-article="research-temporal-truth">
+            <div class="press-meta">
+              <span class="press-source">Clockchain Research</span>
+              <span class="press-date">Feb 3, 2026</span>
+            </div>
+            <div class="press-mono press-mono--cc">
+              <span class="mono-mark">CC</span>
+              <span class="mono-label">Research Paper</span>
+              <div class="mono-grid" aria-hidden="true"></div>
+            </div>
+            <div class="press-body">
+              <span class="press-tag">Whitepaper</span>
+              <h4>Cross-Knowledge Graph Assertion of Temporal Truth</h4>
+              <p class="press-dek">A formal framework for asserting temporal validity across disjoint knowledge graphs using blockchain-anchored timestamps.</p>
+              <div class="press-read">
+                <span>Read paper</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="press-card news-card glass reveal" data-article="smart-contract-eth-polygon" style="--d: 80ms">
+            <div class="press-meta">
+              <span class="press-source">Clockchain</span>
+              <span class="press-date">Jun 3, 2025</span>
+            </div>
+            <div class="press-mono press-mono--cc compact">
+              <span class="mono-mark">CC</span>
+            </div>
+            <div class="press-body">
+              <span class="press-tag">Product update</span>
+              <h4>Smart Contract Scheduling &amp; Execution on Ethereum and Polygon</h4>
+              <div class="press-read">
+                <span>Read update</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Media (press) -->
+        <div class="press-subhead press-subhead--second reveal">
+          <div class="press-subhead-l">
+            <span class="press-num">02</span>
+            <h3>Media</h3>
+            <span class="press-pill press-pill--press">Press coverage</span>
+          </div>
+          <div class="press-rule"></div>
+          <span class="press-count">3 entries</span>
+        </div>
+
+        <div class="press-grid press-grid--media">
+          <article class="press-card press-card--lead press-card--featured news-card glass reveal" data-article="blockzeit-testnet">
+            <div class="press-meta">
+              <span class="press-source">Blockzeit</span>
+              <span class="press-date">Feb 24, 2026</span>
+            </div>
+            <div class="press-mono press-mono--bz">
+              <span class="mono-mark">Bz</span>
+              <span class="mono-label">Blockzeit · Featured</span>
+              <div class="mono-grid" aria-hidden="true"></div>
+            </div>
+            <div class="press-body">
+              <span class="press-tag press-tag--featured">Featured coverage</span>
+              <h4>Clockchain Launches Public Testnet — Here's What It Offers</h4>
+              <p class="press-dek">Blockzeit profiles the public testnet launch and the three foundational services now live for developers.</p>
+              <div class="press-read">
+                <span>Read article</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="press-card news-card glass reveal" data-article="mexc-testnet" style="--d: 60ms">
+            <div class="press-meta">
+              <span class="press-source">MEXC</span>
+              <span class="press-date">Feb 24, 2026</span>
+            </div>
+            <div class="press-mono press-mono--mx compact">
+              <span class="mono-mark">Mx</span>
+            </div>
+            <div class="press-body">
+              <span class="press-tag">Exchange coverage</span>
+              <h4>Clockchain Unveils Testnet for Verifiable Blockchain Time</h4>
+              <div class="press-read">
+                <span>Read article</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="press-card news-card glass reveal" data-article="blockchainwire-testnet" style="--d: 120ms">
+            <div class="press-meta">
+              <span class="press-source">Blockchain Wire</span>
+              <span class="press-date">Feb 24, 2026</span>
+            </div>
+            <div class="press-mono press-mono--bw compact">
+              <span class="mono-mark">BW</span>
+            </div>
+            <div class="press-body">
+              <span class="press-tag">Press release</span>
+              <h4>Clockchain Opens Public Testnet — A New Blockchain-Based Global Time Standard</h4>
+              <div class="press-read">
+                <span>Read article</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Article Reader Modal ===== -->
+    <div class="article-modal" id="articleModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="articleModalTitle">
+      <div class="article-modal-backdrop" data-close></div>
+      <article class="article-modal-card glass-2">
+        <header class="article-modal-head">
+          <div class="article-modal-meta">
+            <span class="amm-source" id="ammSource">—</span>
+            <span class="amm-sep">·</span>
+            <span class="amm-date" id="ammDate">—</span>
+            <span class="amm-sep">·</span>
+            <span class="amm-tag" id="ammTag">—</span>
+          </div>
+          <button class="article-modal-close" type="button" aria-label="Close" data-close>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </header>
+        <div class="article-modal-body">
+          <h2 id="articleModalTitle">—</h2>
+          <div class="article-modal-content" id="articleModalContent"></div>
+        </div>
+        <footer class="article-modal-foot">
+          <span class="amf-hint"><kbd>Esc</kbd> to close</span>
+          <a class="amf-link" id="ammExternal" href="#" target="_blank" rel="noopener" hidden>Open original →</a>
+        </footer>
+      </article>
+    </div>
+
+    <!-- ===== CTA Banner ===== -->
+    <section class="cta-banner">
+      <div class="shell">
+        <div class="cta-card glass-2 reveal">
+          <h2>Build with <em>time</em> you can prove.</h2>
+          <div>
+            <p class="sub">Integrate the Clockchain Timestamp API, schedule a smart contract, or run a node. The testnet is open — start in minutes.</p>
+            <div class="cta-row" style="margin-top: 0">
+              <a class="btn btn-primary" href="https://services.clockchain.network/" target="_blank" rel="noopener">
+                Start building
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8" /></svg>
+              </a>
+              <a class="btn btn-ghost" href="mailto:info@d4d.group">Talk to the team</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-row">
+            <img class="mark" src="assets/clockchain-logo.png" alt="" />
+            <span>Clockchain</span>
+          </div>
+          <p>
+            D4D Sàrl<br/>
+            Rue des Beaux-Arts 8<br/>
+            2000 Neuchâtel · Switzerland<br/><br/>
+            info@d4d.group
+          </p>
+        </div>
+
+        <div>
+          <h5>Protocol</h5>
+          <ul>
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#ecosystem">Ecosystem</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#news">News</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Whitepaper</a></li>
+            <li><a href="#">Patent · US 12,022,015</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Network</h5>
+          <ul>
+            <li><a href="https://services.clockchain.network/" target="_blank" rel="noopener">Services</a></li>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">Node operators</a></li>
+            <li><a href="mailto:info@d4d.group">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 D4D Clockchain · All rights reserved</span>
+        <div class="socials">
+          <a href="https://t.me/ClockchainTime" target="_blank" aria-label="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M9.04 15.4 8.9 19.2c.4 0 .57-.17.77-.37l1.86-1.78 3.86 2.83c.71.39 1.21.18 1.4-.65l2.53-11.85c.23-1.04-.38-1.45-1.06-1.2L3.5 10.18c-1 .39-.99.94-.18 1.19l3.66 1.14 8.5-5.36c.4-.25.77-.11.47.14"/></svg>
+          </a>
+          <a href="https://discord.gg/clockchain" target="_blank" aria-label="Discord">
+            <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+          </a>
+          <a href="https://x.com/clockchain_time" target="_blank" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.967 6.817H1.677l7.73-8.835L1.254 2.25h6.829l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:info@d4d.group" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2 .5v.4l8 5.6 8-5.6V5.5L12 11Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="kinetic.js"></script>
+  <script src="tweaks.js"></script>
+  <script src="news-modal.js"></script>
+</body>
+</html>
