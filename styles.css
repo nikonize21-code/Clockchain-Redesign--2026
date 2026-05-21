@@ -1549,6 +1549,78 @@ img, svg { display: block; max-width: 100%; }
   overflow: hidden;
 }
 .service:hover { transform: translateY(-4px); }
+
+/* ---- Hover: glyph spotlight bloom ---- */
+.service .glyph::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 50% 50%,
+    oklch(0.66 0.087 248 / 0.34) 0%,
+    oklch(0.66 0.087 248 / 0.14) 38%,
+    transparent 72%);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(8px);
+}
+.service:hover .glyph::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.service .glyph svg {
+  position: relative;
+  z-index: 1;
+  transition: transform .6s cubic-bezier(.4,0,.2,1), filter .6s ease;
+}
+.service:hover .glyph svg {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 18px oklch(0.66 0.087 248 / 0.38));
+}
+
+/* ---- Hover: border-trace (two L-shapes meeting at opposite corners) ---- */
+.service-trace {
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  width: 0; height: 0;
+  border: 0 solid oklch(0.66 0.087 248);
+  opacity: 0;
+  z-index: 3;
+  filter: drop-shadow(0 0 6px oklch(0.66 0.087 248 / 0.55));
+}
+.service-trace.t-tl {
+  top: 0; left: 0;
+  border-top-left-radius: 22px;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+  transition:
+    opacity .12s linear .55s,
+    width .35s cubic-bezier(.4,0,.2,1),
+    height .35s cubic-bezier(.4,0,.2,1) .35s;
+}
+.service-trace.t-br {
+  bottom: 0; right: 0;
+  border-bottom-right-radius: 22px;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+  transition:
+    opacity .12s linear .55s,
+    width .35s cubic-bezier(.4,0,.2,1),
+    height .35s cubic-bezier(.4,0,.2,1) .35s;
+}
+.service:hover .service-trace {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  transition:
+    opacity .12s linear,
+    width .35s cubic-bezier(.4,0,.2,1),
+    height .35s cubic-bezier(.4,0,.2,1) .35s;
+}
 .service .q {
   font-family: "Instrument Serif", serif;
   font-style: italic;
