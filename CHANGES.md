@@ -15,15 +15,16 @@
 
 ### 2. Readout card tagline (Hero)
 - HTML: wrapped the LIVE pill in `<div class="rd-head-left">` and added a `<p class="rd-tagline">` reading "Introducing *Blockchain-Enabled Time Verification* — a precision-engineered clock for unmatched accuracy and integrity."
-- CSS: `.rd-head-left` (column flex), `.rd-tagline` (15px semi-bold sans, steel blue, 62ch max width), `.rd-tagline em` (18px Instrument Serif italic in full brand blue). Flex layout keeps a 16px gap from the clock so no overlap.
+- CSS: `.rd-head-left` (column flex), `.rd-tagline` (15px semi-bold sans, steel blue, 62ch max width), `.rd-tagline em` (18px Instrument Serif italic in full brand blue).
 
 ### 3. Tri-card number hover (issue-wrap-tri)
-- CSS: `.issue-card .num` baseline color → dark blue (`oklch(0.42 0.09 248)`). On hover, transitions to brand steel blue (`oklch(0.72 0.12 248)`) with a soft blue glow + slight letter-spacing widening. The pulsing `.num-dot` also switches its pulse color to brand blue on hover (`@keyframes issueDotBlue`). All on `.35s ease` transitions.
+- CSS: `.issue-card .num` baseline color → dark blue. On hover, transitions to brand steel blue with a soft glow + letter-spacing widening. The pulsing `.num-dot` switches its pulse color to brand blue on hover (`@keyframes issueDotBlue`).
 
 ### 4. Service cards — title update + hover (Services section)
-- HTML: updated title to "Timestamp API — 1st Ever Trusted, Verifiable Blockchain TimeStamp" on the third card.
+- HTML: third card title updated to "Timestamp API — 1st Ever Trusted, Verifiable Blockchain TimeStamp".
 - HTML: added two `<span class="service-trace t-tl">` / `<span class="service-trace t-br">` elements at the top of each of the 3 `article.service` cards.
-- CSS: on `.service:hover`:
-  - **Glyph spotlight bloom** — a soft steel-blue radial glow (`.glyph::before`) fades in behind the SVG illustration; the SVG itself scales to ~105% and gets a blue drop-shadow.
-  - **Border trace** — the two L-shaped trace spans grow width then height (top-left corner draws top edge + left edge; bottom-right corner draws bottom edge + right edge). Brand steel blue, 1.5px, with a subtle outer glow. ~0.7s total to complete the perimeter.
-  - The existing 4px `translateY` lift still runs on top.
+- CSS hover: glyph spotlight bloom behind the SVG illustration + SVG scales to ~105% with blue drop-shadow; two L-shape border traces draw from top-left and bottom-right corners. Existing 4px `translateY` lift preserved.
+
+### 5. Quarter cards hover (Roadmap section)
+- HTML: added two `<span class="quarter-trace t-tl">` / `<span class="quarter-trace t-br">` elements at the top of each of the 4 `article.quarter` cards.
+- CSS hover: spotlight bloom (`.quarter::after`) centered behind the Q-number badge; the Q-text picks up a matching soft blue text-shadow; the two L-shape border traces draw the same as the service cards. Existing 6px `translateX` slide preserved.

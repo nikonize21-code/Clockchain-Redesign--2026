@@ -1897,6 +1897,76 @@ img, svg { display: block; max-width: 100%; }
   transition: transform .3s ease, border-color .3s ease;
 }
 .quarter:hover { transform: translateX(6px); border-color: var(--line-strong); }
+
+/* ---- Hover: spotlight bloom over the Q tag ---- */
+.quarter::after {
+  content: "";
+  position: absolute;
+  top: 22px; left: 24px;
+  width: 100px; height: 100px;
+  background: radial-gradient(circle at 50% 50%,
+    oklch(0.66 0.087 248 / 0.42) 0%,
+    oklch(0.66 0.087 248 / 0.16) 38%,
+    transparent 72%);
+  opacity: 0;
+  transform: scale(0.55);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: 0;
+}
+.quarter:hover::after {
+  opacity: 1;
+  transform: scale(1.35);
+}
+.quarter .q-tag {
+  transition: text-shadow .4s ease, color .4s ease;
+}
+.quarter:hover .q-tag {
+  text-shadow: 0 0 18px oklch(0.66 0.087 248 / 0.5);
+}
+
+/* ---- Hover: border-trace (two L-shapes meeting at opposite corners) ---- */
+.quarter-trace {
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  width: 0; height: 0;
+  border: 0 solid oklch(0.66 0.087 248);
+  opacity: 0;
+  z-index: 3;
+  filter: drop-shadow(0 0 6px oklch(0.66 0.087 248 / 0.55));
+}
+.quarter-trace.t-tl {
+  top: 0; left: 0;
+  border-top-left-radius: 22px;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+  transition:
+    opacity .12s linear .55s,
+    width .35s cubic-bezier(.4,0,.2,1),
+    height .35s cubic-bezier(.4,0,.2,1) .35s;
+}
+.quarter-trace.t-br {
+  bottom: 0; right: 0;
+  border-bottom-right-radius: 22px;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+  transition:
+    opacity .12s linear .55s,
+    width .35s cubic-bezier(.4,0,.2,1),
+    height .35s cubic-bezier(.4,0,.2,1) .35s;
+}
+.quarter:hover .quarter-trace {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  transition:
+    opacity .12s linear,
+    width .35s cubic-bezier(.4,0,.2,1),
+    height .35s cubic-bezier(.4,0,.2,1) .35s;
+}
 .quarter .q-tag {
   font-family: var(--f-display);
   font-weight: 600;
