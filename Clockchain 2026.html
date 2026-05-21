@@ -1156,7 +1156,8 @@
                                   dur="180s" repeatCount="indefinite"/>
               </g>
 
-              <!-- Ground stations -->
+              <!-- Ground stations + mesh: pinned to Earth surface, rotates with continents -->
+              <g class="earth-overlay" data-rot-around="250,250">
               <g class="ground-stations">
                 <g transform="translate(178 165)">
                   <circle r="3" fill="var(--acc)"/>
@@ -1197,6 +1198,12 @@
                 <path class="eco-mesh" d="M 195 270 L 248 300" stroke-dasharray="3 4"/>
               </g>
 
+              <!-- shared rotation for ground stations + mesh, matches continents (180s) -->
+              <animateTransform attributeName="transform" type="rotate"
+                                from="0 250 250" to="360 250 250"
+                                dur="180s" repeatCount="indefinite"/>
+              </g>
+
               <!-- Satellite -->
               <g class="satellite">
                 <circle r="22" fill="url(#sat-glow)"/>
@@ -1227,11 +1234,11 @@
               </g>
             </svg>
 
-            <!-- Floating labels (positioned over ground stations) -->
-            <div class="eco-label" style="left:33%; top:30%">NICT · JP</div>
-            <div class="eco-label" style="left:63%; top:36%">SAFRAN</div>
-            <div class="eco-label" style="left:51%; top:62%">NTP · USA</div>
-            <div class="eco-label" style="left:36%; top:55%">GPS · L1</div>
+            <!-- Floating labels — pinned to ground stations on the rotating Earth (positions updated by JS) -->
+            <div class="eco-label" data-station="178,165">NICT · JP</div>
+            <div class="eco-label" data-station="315,198">SAFRAN</div>
+            <div class="eco-label" data-station="248,300">NTP · USA</div>
+            <div class="eco-label" data-station="195,270">GPS · L1</div>
           </div>
 
           <div class="eco-text glass reveal" style="--d: 120ms">
@@ -1578,5 +1585,6 @@
   <script src="kinetic.js"></script>
   <script src="tweaks.js"></script>
   <script src="news-modal.js"></script>
+  <script src="earth-pins.js"></script>
 </body>
 </html>
