@@ -1438,10 +1438,29 @@ img, svg { display: block; max-width: 100%; }
   font-weight: 500;
 }
 .issue-wrap.issue-wrap-tri .issue-card .num {
-  color: var(--acc);
+  color: oklch(0.42 0.09 248);
   font-size: clamp(18px, 1.55vw, 22px);
   letter-spacing: 0.16em;
   margin-bottom: 24px;
+  transition: color .35s ease, text-shadow .35s ease, letter-spacing .35s ease;
+}
+.issue-wrap.issue-wrap-tri .issue-card:hover .num {
+  color: oklch(0.72 0.12 248);
+  text-shadow: 0 0 14px oklch(0.66 0.087 248 / 0.55);
+  letter-spacing: 0.2em;
+}
+.issue-wrap.issue-wrap-tri .issue-card:hover .num-dot {
+  background: oklch(0.66 0.087 248);
+  box-shadow: 0 0 0 0 oklch(0.66 0.087 248 / 0.75);
+  animation-name: issueDotBlue;
+}
+@keyframes issueDotBlue {
+  0%   { box-shadow: 0 0 0 0   oklch(0.66 0.087 248 / 0.75); }
+  70%  { box-shadow: 0 0 0 10px oklch(0.66 0.087 248 / 0); }
+  100% { box-shadow: 0 0 0 0   oklch(0.66 0.087 248 / 0); }
+}
+.issue-wrap.issue-wrap-tri .num-dot {
+  transition: background .35s ease;
 }
 .issue-wrap.issue-wrap-tri .issue-card p {
   font-size: 14.5px;
