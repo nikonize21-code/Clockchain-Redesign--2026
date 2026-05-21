@@ -1902,29 +1902,30 @@ img, svg { display: block; max-width: 100%; }
 .quarter::after {
   content: "";
   position: absolute;
-  top: 22px; left: 24px;
-  width: 100px; height: 100px;
+  top: 10px; left: 12px;
+  width: 130px; height: 130px;
   background: radial-gradient(circle at 50% 50%,
-    oklch(0.66 0.087 248 / 0.42) 0%,
-    oklch(0.66 0.087 248 / 0.16) 38%,
+    oklch(0.72 0.13 248 / 0.65) 0%,
+    oklch(0.66 0.087 248 / 0.28) 38%,
     transparent 72%);
   opacity: 0;
   transform: scale(0.55);
   transition: opacity .5s ease, transform .6s cubic-bezier(.4,0,.2,1);
   pointer-events: none;
   border-radius: 50%;
-  filter: blur(10px);
+  filter: blur(12px);
   z-index: 0;
 }
 .quarter:hover::after {
   opacity: 1;
-  transform: scale(1.35);
+  transform: scale(1.5);
 }
 .quarter .q-tag {
   transition: text-shadow .4s ease, color .4s ease;
 }
 .quarter:hover .q-tag {
-  text-shadow: 0 0 18px oklch(0.66 0.087 248 / 0.5);
+  color: oklch(0.78 0.12 248);
+  text-shadow: 0 0 22px oklch(0.72 0.13 248 / 0.75);
 }
 
 /* ---- Hover: border-trace (two L-shapes meeting at opposite corners) ---- */
@@ -1933,16 +1934,16 @@ img, svg { display: block; max-width: 100%; }
   pointer-events: none;
   box-sizing: border-box;
   width: 0; height: 0;
-  border: 0 solid oklch(0.66 0.087 248);
+  border: 0 solid oklch(0.78 0.13 248);
   opacity: 0;
   z-index: 3;
-  filter: drop-shadow(0 0 6px oklch(0.66 0.087 248 / 0.55));
+  filter: drop-shadow(0 0 8px oklch(0.66 0.13 248 / 0.85));
 }
 .quarter-trace.t-tl {
   top: 0; left: 0;
   border-top-left-radius: 22px;
-  border-top-width: 1.5px;
-  border-left-width: 1.5px;
+  border-top-width: 2px;
+  border-left-width: 2px;
   transition:
     opacity .12s linear .55s,
     width .35s cubic-bezier(.4,0,.2,1),
@@ -1951,8 +1952,8 @@ img, svg { display: block; max-width: 100%; }
 .quarter-trace.t-br {
   bottom: 0; right: 0;
   border-bottom-right-radius: 22px;
-  border-bottom-width: 1.5px;
-  border-right-width: 1.5px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
   transition:
     opacity .12s linear .55s,
     width .35s cubic-bezier(.4,0,.2,1),
