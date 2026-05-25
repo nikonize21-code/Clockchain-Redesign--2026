@@ -290,7 +290,7 @@ img, svg { display: block; max-width: 100%; }
   color: var(--state);
 }
 .nav-logo .mark {
-  width: 69px; height: 69px;
+  width: auto; height: 56px; display: block;
 }
 .nav-links {
   display: flex; gap: 4px; align-items: center;
@@ -2141,7 +2141,7 @@ img, svg { display: block; max-width: 100%; }
 .footer-grid a { color: var(--fg-2); font-size: 14.5px; }
 .footer-grid a:hover { color: var(--acc); }
 .footer-brand .logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-.footer-brand .logo-row .mark { width: 72px; height: 72px; }
+.footer-brand .logo-row .mark { width: auto; height: 56px; display: block; }
 .footer-brand .logo-row span { font-family: var(--f-display); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
 .footer-brand p { color: var(--fg-3); font-size: 14px; line-height: 1.55; }
 .footer-bottom {
