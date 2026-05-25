@@ -8,6 +8,96 @@
   'use strict';
 
   const ARTICLES = {
+    // ===== Press Releases (chronological, newest first) =====
+    'pr-testnet-2026': {
+      source: 'Press Release',
+      date: 'February 24, 2026',
+      tag: 'Latest release',
+      title: 'Clockchain Opens Public Testnet, Introducing a New Blockchain Based Global Time Standard',
+      external: 'https://www.blockchainwire.io/press-release/clockchain-opens-public-testnet-introducing-a-new-blockchain-based-global-time-standard',
+      body: `
+        <p>The Clockchain Network has completed development of the world's first
+        blockchain-based time oracle and opened its public testnet to developers
+        worldwide — introducing a new global standard for verifiable time.</p>
+
+        <p>Read the full release on Blockchain Wire →</p>
+      `
+    },
+
+    'pr-eth-polygon-2025': {
+      source: 'Press Release',
+      date: 'June 3, 2025',
+      tag: 'Product release',
+      title: 'Clockchain to Schedule and Execute Smart Contracts on Ethereum and Polygon',
+      external: 'https://www.einpresswire.com/article/818495889/clockchain-to-schedule-and-execute-smart-contracts-on-ethereum-and-polygon',
+      body: `
+        <p>Clockchain announces smart contract scheduling and execution on Ethereum and
+        Polygon — using verifiable blockchain time as the trigger for on-chain actions.</p>
+
+        <p>Read the full release on EIN Presswire →</p>
+      `
+    },
+
+    'pr-time-oracle-2025': {
+      source: 'Press Release',
+      date: 'January 22, 2025',
+      tag: 'Product release',
+      title: 'Clockchain Network Announces New Time Oracle',
+      external: 'https://www.einpresswire.com/article/778900186/clockchain-network-announces-new-time-oracle',
+      body: `
+        <p>The Clockchain Network announces its new Time Oracle, delivering precise,
+        tamper-evident time data to blockchain applications and smart contracts.</p>
+
+        <p>Read the full release on EIN Presswire →</p>
+      `
+    },
+
+    'pr-sf-tech-week-2024': {
+      source: 'Press Release',
+      date: 'October 16, 2024',
+      tag: 'Event',
+      title: 'Clockchain Network Unveils New Timestamping Solutions at SF Tech Week',
+      external: 'https://www.einpresswire.com/article/752264416/clockchain-network-unveils-new-timestamping-solutions-at-sf-tech-week',
+      body: `
+        <p>At SF Tech Week, Clockchain Network unveiled its new timestamping solutions —
+        bringing verifiable, blockchain-anchored timestamps to enterprise and Web3
+        applications.</p>
+
+        <p>Read the full release on EIN Presswire →</p>
+      `
+    },
+
+    'pr-patent-2024': {
+      source: 'Press Release',
+      date: 'August 13, 2024',
+      tag: 'Milestone',
+      title: 'Clockchain Awarded Patent for World’s First Blockchain Clock',
+      external: 'https://www.einpresswire.com/article/732597207/clockchain-awarded-patent-for-world-s-first-blockchain-clock',
+      body: `
+        <p>Clockchain has been awarded a patent for the world's first blockchain clock —
+        a foundational milestone for the company's mission to deliver a verifiable
+        global time standard.</p>
+
+        <p>Read the full release on EIN Presswire →</p>
+      `
+    },
+
+    'pr-european-forum-2024': {
+      source: 'Press Release',
+      date: 'June 24, 2024',
+      tag: 'Event',
+      title: 'D4D Clockchain Technology Debuts at European Timekeeping Forum',
+      external: 'https://www.prweb.com/releases/d4d-clockchain-technology-debuts-at-european-timekeeping-forum-302178744.html',
+      body: `
+        <p>D4D Clockchain technology made its public debut at the European Timekeeping
+        Forum — introducing a blockchain-anchored approach to global time and
+        timestamping to a community of metrology and precision-time experts.</p>
+
+        <p>Read the full release on PRWeb →</p>
+      `
+    },
+
+    // ===== Research / legacy entries =====
     'research-temporal-truth': {
       source: 'Clockchain Research',
       date: 'Feb 3, 2026',
@@ -209,16 +299,16 @@
   }
 
   function init() {
-    // Click on any press-card opens its article
-    document.querySelectorAll('.press-card[data-article]').forEach((card) => {
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('role', 'button');
-      const key = card.getAttribute('data-article');
-      const title = card.querySelector('h4')?.textContent || 'Read article';
-      card.setAttribute('aria-label', title);
+    // Click on any press-card or pr-list-item opens its article
+    document.querySelectorAll('[data-article]').forEach((el) => {
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      const key = el.getAttribute('data-article');
+      const title = el.querySelector('h4, .pr-title')?.textContent || 'Read article';
+      el.setAttribute('aria-label', title);
 
-      card.addEventListener('click', () => open(key));
-      card.addEventListener('keydown', (e) => {
+      el.addEventListener('click', () => open(key));
+      el.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           open(key);
