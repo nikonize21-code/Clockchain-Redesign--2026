@@ -2966,6 +2966,32 @@ body.modal-open { overflow: hidden; }
   .article-modal-content { font-size: 15px; }
 }
 
+/* Make pr-lead anchor variant inherit clean link styling */
+a.press-card.pr-lead { text-decoration: none; color: inherit; display: grid; }
+
+/* Blog "More coming" tile */
+.blog-more {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 26px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 16px;
+  background: color-mix(in oklab, var(--bg-elev), transparent 30%);
+}
+.blog-more-label {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--acc);
+}
+.blog-more-text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--fg-2);
+}
+
 /* =============================================================
    News — Press Releases (chronological list with lead image)
    ============================================================= */
