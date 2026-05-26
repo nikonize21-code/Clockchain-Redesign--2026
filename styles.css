@@ -2162,6 +2162,61 @@ img, svg { display: block; max-width: 100%; }
 .footer-bottom .socials a:hover { background: oklch(1 0 0 / 0.08); border-color: var(--line-strong); }
 .footer-bottom .socials svg { width: 16px; height: 16px; fill: var(--fg-2); }
 
+/* Back-to-top — centered divider lockup */
+.btt-divider {
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 0 32px;
+  position: relative;
+}
+.btt-divider::before,
+.btt-divider::after {
+  content: ""; flex: 1;
+  height: 1px; background: var(--line);
+}
+.btt-divider a {
+  display: inline-flex; align-items: center; gap: 14px;
+  margin: 0 28px;
+  padding: 12px 22px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: oklch(0.16 0.012 150 / 0.6);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  color: var(--fg-2);
+  text-decoration: none;
+  font-family: var(--f-mono);
+  font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  transition: color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.btt-divider a:hover {
+  color: var(--acc);
+  border-color: var(--acc);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -14px var(--acc-glow);
+}
+.btt-divider .mini-mark {
+  height: 18px; width: auto; opacity: 0.9; display: block;
+}
+.btt-divider .arrow-circle {
+  width: 22px; height: 22px; border-radius: 999px;
+  display: grid; place-items: center;
+  border: 1px solid currentColor;
+  transition: transform .2s ease;
+}
+.btt-divider a:hover .arrow-circle { transform: translateY(-3px); }
+.btt-divider .arrow-circle svg { width: 9px; height: 9px; }
+
+/* When the divider lockup is present, tighten the gap above and remove the
+   redundant top border on the legal row */
+.footer-grid:has(+ .btt-divider) { margin-bottom: 40px; }
+.btt-divider + .footer-bottom { border-top: 0; padding-top: 0; }
+
+/* On narrow screens, drop the side rules so the pill sits on its own */
+@media (max-width: 720px) {
+  .btt-divider::before, .btt-divider::after { display: none; }
+  .btt-divider a { margin: 0; }
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 1080px) {
   .nav-links { display: none; }
