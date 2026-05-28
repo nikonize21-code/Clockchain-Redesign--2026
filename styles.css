@@ -374,6 +374,46 @@ img, svg { display: block; max-width: 100%; }
 }
 .nav-cta:hover .arrow { transform: translate(2px, -2px); }
 
+/* ========== Theme toggle (light/dark) ========== */
+.theme-toggle {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  border: 1px solid oklch(1 0 0 / 0.08);
+  background: oklch(1 0 0 / 0.03);
+  color: var(--fg-2);
+  cursor: pointer;
+  padding: 0;
+  margin-right: 4px;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.theme-toggle:hover {
+  color: var(--acc);
+  border-color: oklch(1 0 0 / 0.18);
+  background: oklch(1 0 0 / 0.06);
+  transform: translateY(-1px);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 2px;
+}
+.theme-icon { width: 16px; height: 16px; display: block; }
+/* Dark mode → show moon (action: go to dark? no — show what user will switch TO).
+   Convention: sun shown in dark mode means "switch to light"; moon in light means "switch to dark". */
+.theme-toggle .theme-icon-sun { display: block; }
+.theme-toggle .theme-icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .theme-icon-sun { display: none; }
+[data-theme="light"] .theme-toggle .theme-icon-moon { display: block; }
+[data-theme="light"] .theme-toggle {
+  border-color: oklch(0 0 0 / 0.08);
+  background: oklch(0 0 0 / 0.02);
+  color: var(--fg-2);
+}
+[data-theme="light"] .theme-toggle:hover {
+  border-color: oklch(0 0 0 / 0.18);
+  background: oklch(0 0 0 / 0.05);
+}
+
 /* ========== Hero ========== */
 .hero {
   position: relative; z-index: 1;
@@ -1356,9 +1396,8 @@ img, svg { display: block; max-width: 100%; }
   /* Re-tint the feature card's wash to deep teal */
 }
 .issue-wrap.issue-wrap-tri .issue-card.feature {
-  background:
-    linear-gradient(180deg, oklch(0.52 0.10 165 / 0.10), transparent 55%),
-    var(--panel);
+  /* Match sibling cards — no special wash */
+  background: var(--panel);
 }
 .issue-wrap.issue-wrap-tri .issue-card {
   padding: 34px 32px;
