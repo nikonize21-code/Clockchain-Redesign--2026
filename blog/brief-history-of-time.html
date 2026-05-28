@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Brief History of Time — Clockchain</title>
+  <title>A History of Time — Clockchain</title>
   <link rel="icon" type="image/png" href="../assets/clockchain-logo.png" />
 
   <!-- Fonts -->
@@ -91,9 +91,9 @@
       color: var(--fg);
     }
     .article-title em {
-      font-family: "Instrument Serif", serif;
-      font-style: italic;
-      font-weight: 400;
+      font-family: var(--f-display);
+      font-style: normal;
+      font-weight: 500;
       color: var(--acc);
       letter-spacing: -0.01em;
     }
@@ -133,6 +133,8 @@
       border-radius: 4px;
       overflow: hidden;
       background: #000;
+      max-width: 700px;
+      margin: 0 auto;
     }
     .hero-figure-frame img {
       width: 100%;
@@ -178,7 +180,7 @@
       padding: 0 32px;
     }
     .article-intro p {
-      font-family: "Instrument Serif", Georgia, serif;
+      font-family: var(--f-display);
       font-size: 26px;
       line-height: 1.45;
       letter-spacing: -0.005em;
@@ -187,13 +189,14 @@
       text-wrap: pretty;
     }
     .article-intro p.lead-cap::first-letter {
-      font-family: "Instrument Serif", serif;
+      font-family: var(--f-display);
       font-size: 5.2em;
       float: left;
       line-height: 0.86;
       padding: 8px 14px 0 0;
       color: var(--acc);
-      font-style: italic;
+      font-style: normal;
+      font-weight: 500;
     }
 
     /* Inline intro figure — small, floats right so text wraps around */
@@ -366,6 +369,9 @@
       grid-template-columns: 1fr 1.2fr;
       gap: 36px;
       align-items: start;
+    }
+    .entry.featured.featured-grow .featured-grid {
+      grid-template-columns: 1.3fr 1fr;
     }
     .entry.featured .featured-img {
       border: 1px solid var(--line);
@@ -558,7 +564,7 @@
       <span class="sep">·</span>
       <span>FROM THE TEAM</span>
     </div>
-    <h1 class="article-title">A brief history of <em>time</em> and timekeeping.</h1>
+    <h1 class="article-title">A history of <em>time</em> and timekeeping.</h1>
     <p class="article-dek">
       From 13.8 billion years before present to Q4 2026.
     </p>
@@ -595,7 +601,7 @@
       </div>
     </div>
     <div class="entries">
-      <article class="entry featured">
+      <article class="entry featured featured-grow">
         <div class="featured-grid">
           <figure class="featured-img-wrap">
             <div class="featured-img">

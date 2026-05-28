@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
@@ -118,12 +118,6 @@
               <div class="rd-time-block">
                 <div class="rd-time-label">CLOCKCHAIN UTC</div>
                 <div class="rd-time" id="rd-time">00<span class="sep">:</span>00<span class="sep">:</span>00<span class="ms">.000</span></div>
-                <div class="rd-time-meta">
-                  <span id="rd-date">2026-01-01</span>
-                  <span class="dot">·</span>
-                  <span>UTC</span>
-                  <div class="rd-progress" aria-hidden="true"><span id="rd-progress-bar"></span></div>
-                </div>
               </div>
 
               <div class="rd-stats">
@@ -131,86 +125,13 @@
                   <div class="rd-stat-label">BLOCK HEIGHT</div>
                   <div class="rd-stat-val" id="rd-height">#0</div>
                 </div>
-                <div class="rd-stat">
-                  <div class="rd-stat-label">DRIFT VS UTC <span class="rd-stat-ind"></span></div>
-                  <div class="rd-stat-val" id="rd-drift">±0.000 ms</div>
-                </div>
-                <div class="rd-stat">
-                  <div class="rd-stat-label">VALIDATORS</div>
-                  <div class="rd-stat-val rd-stat-validators">
-                    <span id="rd-validators">128</span>
-                    <svg class="rd-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/><polyline points="9 12 11 14 15 10"/></svg>
-                  </div>
-                </div>
-              </div>
-
-              <div class="rd-blocks">
-                <div class="rd-table-head">
-                  <span class="th-h">HEIGHT</span>
-                  <span class="th-t">TIMESTAMP</span>
-                  <span class="th-v">VALIDATOR</span>
-                  <span class="th-d">DRIFT</span>
-                </div>
-                <div class="rd-block-list" id="rd-block-list" role="list"></div>
-              </div>
-
-              <div class="rd-foot">
-                <span class="rd-foot-l"><span class="live-dot"></span><span id="rd-foot-text">Network secured by 128 validators</span></span>
-                <span class="rd-foot-r"><span id="rd-foot-status">Updated just now</span><span class="rd-foot-dot"></span></span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Bottom horizontal stat strip -->
-      <div class="shell">
-        <div class="hero-stat-strip glass reveal" style="--d: 540ms">
-          <div class="hss-cell">
-            <div class="hss-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-            </div>
-            <div class="hss-body">
-              <div class="hss-label">Block Height</div>
-              <div class="hss-val" id="hss-height">—</div>
-              <div class="hss-sub">latest block</div>
-            </div>
-          </div>
-
-          <div class="hss-cell">
-            <div class="hss-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 7 12 10 5 14 19 17 12 21 12"/></svg>
-            </div>
-            <div class="hss-body">
-              <div class="hss-label">Blocks per second</div>
-              <div class="hss-val" id="hss-bps">1.003</div>
-              <div class="hss-sub">avg over 1 min</div>
-            </div>
-          </div>
-
-          <div class="hss-cell">
-            <div class="hss-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/><polyline points="9 12 11 14 15 10"/></svg>
-            </div>
-            <div class="hss-body">
-              <div class="hss-label">Validators</div>
-              <div class="hss-val">128</div>
-              <div class="hss-sub">active validators</div>
-            </div>
-          </div>
-
-          <div class="hss-cell">
-            <div class="hss-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="hss-body">
-              <div class="hss-label">Uptime</div>
-              <div class="hss-val">99.99%</div>
-              <div class="hss-sub">30d rolling</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Bottom horizontal stat strip removed -->
     </section>
 
     <!-- ===== Issue + What is Clockchain ===== -->
@@ -501,7 +422,7 @@
                   <rect x="6" y="6" width="50" height="11" rx="5.5"
                         fill="oklch(0.72 0.255 142 / 0.16)"
                         stroke="var(--state)" stroke-width="0.7"/>
-                  <text x="11" y="14" font-family="Instrument Serif, serif" font-style="italic" font-size="7" fill="var(--state)">Clockchain</text>
+                  <text x="11" y="14" font-family="Space Grotesk, sans-serif" font-weight="500" font-size="7" fill="var(--state)">Clockchain</text>
                   <rect x="6" y="22" width="42" height="3.5" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.5"/>
                   <rect x="6" y="30" width="56" height="3.5" rx="1" fill="oklch(0.97 0.005 90)" opacity="0.32"/>
                 </g>
@@ -1215,18 +1136,6 @@
             <div class="eco-label" data-station="248,300">NTP · USA</div>
             <div class="eco-label" data-station="195,270">GPS · L1</div>
           </div>
-
-          <div class="eco-text glass reveal" style="--d: 120ms">
-            <div>
-              <div class="eyebrow" style="margin-bottom:18px">$CCTT marketplace</div>
-              <h3>Time, distributed — and paid for.</h3>
-            </div>
-            <div class="eco-stats">
-              <div class="stat"><div class="v">$CCTT</div><div class="l">Native token</div></div>
-              <div class="stat"><div class="v">∞</div><div class="l">Nodes (open)</div></div>
-              <div class="stat"><div class="v">1s</div><div class="l">Block time</div></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -1243,13 +1152,7 @@
             <span class="tick-sep">·</span>
             <span>UPDATED WEEKLY</span>
           </div>
-          <h2>From the <em>Clockchain</em> blog.</h2>
-          <p class="lede">
-            Welcome to the Clockchain blog — a new home for our writing as we build the
-            world's first blockchain-based global time standard. Long-form essays, engineering notes, and field reports from the team building the new global
-            standard for time. New posts on protocol design, decentralized physical infrastructure, and the
-            economics of verifiable timestamps.
-          </p>
+          <h2><em>Clockchain</em> Blog.</h2>
         </div>
 
         <div class="press-subhead reveal">
@@ -1265,15 +1168,14 @@
         <div class="press-news-stack">
           <a class="press-card pr-lead glass reveal blog-lead-link" href="blog/brief-history-of-time.html">
             <div class="pr-lead-img">
-              <img src="assets/blog/atomic-clock-1949.jpg" alt="The first atomic clock at the US National Bureau of Standards, 1949" />
+              <img src="assets/blog/big-bang-1.webp" alt="Artistic rendering of the Big Bang — a singularity expanding into spacetime" />
             </div>
             <div class="pr-lead-body">
               <div class="press-meta">
                 <span class="press-source">Clockchain Team</span>
                 <span class="press-date">May 25, 2026</span>
               </div>
-              <span class="press-tag">History</span>
-              <h4>A brief history of time.</h4>
+              <h4>A history of time.</h4>
               <p class="press-dek">From a singularity 13.8 billion years ago to a blockchain-native global time standard in 2026 — fifteen moments that shaped how we measure when.</p>
               <div class="press-read">
                 <span>Read post</span>
@@ -1282,10 +1184,6 @@
             </div>
           </a>
 
-          <div class="blog-more reveal">
-            <span class="blog-more-label">More posts coming</span>
-            <span class="blog-more-text">Engineering notes, protocol deep-dives, and field reports from the team. Subscribe for updates.</span>
-          </div>
         </div>
       </div>
     </section>
@@ -1308,10 +1206,6 @@
             <span>UPDATED 2026.02.24</span>
           </div>
           <h2>News &amp; <em>Media</em>.</h2>
-          <p class="lede">
-            First-party updates and research from the Clockchain team — and press coverage from across the
-            broader network.
-          </p>
         </div>
 
         <!-- News (in-house) -->
@@ -1327,10 +1221,7 @@
 
         <div class="press-news-stack">
           <!-- Featured / most recent -->
-          <article class="press-card pr-lead glass reveal" data-article="pr-testnet-2026">
-            <div class="pr-lead-img">
-              <img src="assets/clockchain-time-pr.png" alt="Clockchain Time display over Earth from space" />
-            </div>
+          <article class="press-card pr-lead pr-no-image glass reveal" data-article="pr-testnet-2026">
             <div class="pr-lead-body">
               <div class="press-meta">
                 <span class="press-source">Press Release</span>
@@ -1339,10 +1230,6 @@
               <span class="press-tag">Latest release</span>
               <h4>Clockchain Opens Public Testnet, Introducing a New Blockchain Based Global Time Standard</h4>
               <p class="press-dek">The world's first blockchain-based time oracle is now open to developers — combining atomic-clock precision with on-chain verifiability.</p>
-              <div class="press-read">
-                <span>Read release</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </div>
             </div>
           </article>
 

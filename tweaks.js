@@ -4,14 +4,16 @@
     "accent": "green",
     "theme": "dark",
     "kinetic": "subtle",
-    "roadmap": "vertical"
+    "roadmap": "vertical",
+    "typeface": "manrope"
   }/*EDITMODE-END*/;
 
   const OPTIONS = {
     accent:  [["green","Gold"],["duo","Gold + Blue"],["luxe","Amber"]],
     theme:   [["dark","Dark"],["light","Light Luxe"]],
     kinetic: [["subtle","Subtle"],["aggressive","Aggressive"]],
-    roadmap: [["vertical","Sticky Year"],["horizontal","Timeline"]]
+    roadmap: [["vertical","Sticky Year"],["horizontal","Timeline"]],
+    typeface:[["space-grotesk","Space"],["manrope","Manrope"],["hanken","Hanken"]]
   };
 
   const state = { ...DEFAULTS };
@@ -29,6 +31,9 @@
 
     if (state.roadmap === "vertical") r.removeAttribute("data-roadmap");
     else r.setAttribute("data-roadmap", state.roadmap);
+
+    if (state.typeface === "manrope") r.removeAttribute("data-typeface");
+    else r.setAttribute("data-typeface", state.typeface);
   };
   apply();
 
@@ -60,7 +65,7 @@
   document.body.appendChild(panel);
 
   function labelFor(k) {
-    return ({ accent: "Accent palette", theme: "Theme", kinetic: "Hero kinetics", roadmap: "Roadmap layout" })[k];
+    return ({ accent: "Accent palette", theme: "Theme", kinetic: "Hero kinetics", roadmap: "Roadmap layout", typeface: "Main typeface" })[k];
   }
 
   function syncButtons() {

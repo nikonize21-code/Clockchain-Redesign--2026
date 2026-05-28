@@ -160,7 +160,7 @@
       date: 'Feb 24, 2026',
       tag: 'Featured coverage',
       title: 'Clockchain Launches Public Testnet — Here\u2019s What It Offers',
-      external: null,
+      external: 'https://blockzeit.com/clockchain-launches-public-testnet-heres-what-it-offers/',
       body: `
         <p>Clockchain, the time-focused blockchain network, has launched its public testnet,
         delivering the world's first verifiable blockchain-based time oracle.</p>
@@ -194,7 +194,7 @@
       date: 'Feb 24, 2026',
       tag: 'Exchange coverage',
       title: 'Clockchain Unveils Testnet for Verifiable Blockchain Time',
-      external: null,
+      external: 'https://www.mexc.co/news/786064',
       body: `
         <p>MEXC reports on Clockchain's public testnet launch — the first blockchain-based
         time oracle to combine atomic-clock precision with on-chain verifiability.</p>
@@ -221,7 +221,7 @@
       date: 'Feb 24, 2026',
       tag: 'Press release',
       title: 'Clockchain Opens Public Testnet — A New Blockchain-Based Global Time Standard',
-      external: null,
+      external: 'https://www.blockchainwire.io/press-release/clockchain-opens-public-testnet-introducing-a-new-blockchain-based-global-time-standard',
       body: `
         <p><strong>SAN FRANCISCO, CA — </strong>The Clockchain Network has completed
         development of the world's first blockchain-based time oracle and opened its
@@ -307,11 +307,23 @@
       const title = el.querySelector('h4, .pr-title')?.textContent || 'Read article';
       el.setAttribute('aria-label', title);
 
-      el.addEventListener('click', () => open(key));
+      el.addEventListener('click', () => {
+        const article = ARTICLES[key];
+        if (article && article.external) {
+          window.open(article.external, '_blank', 'noopener,noreferrer');
+        } else {
+          open(key);
+        }
+      });
       el.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          open(key);
+          const article = ARTICLES[key];
+          if (article && article.external) {
+            window.open(article.external, '_blank', 'noopener,noreferrer');
+          } else {
+            open(key);
+          }
         }
       });
     });
