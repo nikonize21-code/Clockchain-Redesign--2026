@@ -2345,7 +2345,7 @@ img, svg { display: block; max-width: 100%; }
     linear-gradient(to right, oklch(0 0 0 / 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, oklch(0 0 0 / 0.04) 1px, transparent 1px);
 }
-[data-theme="light"] .nav-cta { color: var(--bg-deep); }
+[data-theme="light"] .nav-cta { color: oklch(0.48 0.16 142); }
 [data-theme="light"] .btn-primary { color: oklch(0.15 0.01 75); }
 [data-theme="light"] ::-webkit-scrollbar-track { background: var(--bg-deep); }
 [data-theme="light"] ::-webkit-scrollbar-thumb { background: oklch(0.8 0.01 75); }
@@ -3116,19 +3116,19 @@ a.press-card.pr-lead { text-decoration: none; color: inherit; display: grid; }
 /* ---------- Lead (featured / most recent) ---------- */
 .press-card.pr-lead {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: 0.85fr 1.6fr;
   gap: 0;
   padding: 0;
   overflow: hidden;
   border-radius: 22px;
   cursor: pointer;
-  min-height: 360px;
+  min-height: 306px;
 }
 .pr-lead-img {
   position: relative;
   overflow: hidden;
   background: oklch(0.18 0.02 240);
-  min-height: 320px;
+  min-height: 272px;
 }
 .pr-lead-img img {
   width: 100%;
