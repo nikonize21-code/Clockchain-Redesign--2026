@@ -1587,6 +1587,9 @@ img, svg { display: block; max-width: 100%; }
   color: var(--fg-3); margin-top: 22px;
   padding-top: 18px; border-top: 1px solid var(--line);
 }
+/* Issue cards reuse sol-card styling — flex so footer tags align across the row */
+.issue-solgrid .sol-card { display: flex; flex-direction: column; }
+.issue-solgrid .sol-card .tag { margin-top: auto; }
 
 /* ========== Services — alternating layout ========== */
 .services-list { display: grid; gap: 24px; }
@@ -2350,6 +2353,7 @@ img, svg { display: block; max-width: 100%; }
 [data-theme="light"] ::-webkit-scrollbar-track { background: var(--bg-deep); }
 [data-theme="light"] ::-webkit-scrollbar-thumb { background: oklch(0.8 0.01 75); }
 [data-theme="light"] .sol-card .big-num { color: oklch(0 0 0 / 0.08); }
+[data-theme="light"] .sol-card:hover .big-num { color: oklch(0.5 0.11 248 / 0.6); }
 [data-theme="light"] .news-card .preview {
   background:
     repeating-linear-gradient(45deg, oklch(0 0 0 / 0.04), oklch(0 0 0 / 0.04) 8px, transparent 8px, transparent 16px),
