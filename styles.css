@@ -154,9 +154,11 @@ img, svg { display: block; max-width: 100%; }
 [data-theme="light"] .glass-2,
 [data-theme="light"] .liquid-glass {
   background: oklch(1 0 0 / 0.5);
+  /* On pure white, define cards with a hairline ring + soft lift so edges read */
   box-shadow:
+    inset 0 0 0 1px oklch(0 0 0 / 0.07),
     inset 0 1px 1px oklch(1 0 0 / 0.8),
-    0 24px 60px -40px oklch(0 0 0 / 0.18);
+    0 16px 40px -26px oklch(0 0 0 / 0.16);
 }
 [data-theme="light"] .glass::before,
 [data-theme="light"] .glass-2::before,
@@ -280,8 +282,11 @@ img, svg { display: block; max-width: 100%; }
     0 12px 40px -10px oklch(0 0 0 / 0.5);
 }
 [data-theme="light"] .nav-inner {
-  background: oklch(1 0 0 / 0.5);
-  box-shadow: inset 0 1px 1px oklch(1 0 0 / 0.8);
+  background: oklch(1 0 0 / 0.6);
+  box-shadow:
+    inset 0 0 0 1px oklch(0 0 0 / 0.06),
+    inset 0 1px 1px oklch(1 0 0 / 0.8),
+    0 8px 28px -18px oklch(0 0 0 / 0.18);
 }
 [data-theme="light"] .nav-inner::before {
   background: linear-gradient(
@@ -476,9 +481,7 @@ img, svg { display: block; max-width: 100%; }
   opacity: 0;
 }
 [data-theme="light"] .hero-video-tint {
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 50%, transparent 0%, oklch(0.96 0.005 75 / 0.45) 70%, oklch(0.96 0.005 75 / 0.85) 100%),
-    linear-gradient(180deg, oklch(0.96 0.005 75 / 0.25) 0%, oklch(0.96 0.005 75 / 0.4) 55%, var(--bg) 100%);
+  background: var(--bg);
 }
 
 /* Ensure hero contents sit above video */
@@ -1365,15 +1368,12 @@ img, svg { display: block; max-width: 100%; }
   opacity: 0.7;
 }
 [data-theme="light"] .issues-video {
-  opacity: 0.28;
-  filter: hue-rotate(8deg) saturate(0.45) contrast(0.9) brightness(1.05);
+  opacity: 0;
 }
 [data-theme="light"] .issues-video-tint {
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 50%, transparent 0%, oklch(0.96 0.005 75 / 0.55) 70%, var(--bg) 100%),
-    linear-gradient(180deg, var(--bg) 0%, oklch(0.96 0.005 75 / 0.4) 50%, var(--bg) 100%);
+  background: var(--bg);
 }
-[data-theme="light"] .issues-video-grid { opacity: 0.35; }
+[data-theme="light"] .issues-video-grid { opacity: 0; }
 @media (prefers-reduced-motion: reduce) {
   .issues-video { animation: none; }
 }
@@ -2233,25 +2233,35 @@ img, svg { display: block; max-width: 100%; }
   display: inline-flex; align-items: center; gap: 14px;
   margin: 0 28px;
   padding: 12px 22px;
-  border: 1px solid var(--line);
   border-radius: 999px;
-  background: oklch(0.16 0.012 150 / 0.6);
-  backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  color: var(--fg-2);
+  /* Match the top-nav Contact pill — green glassmorphism */
+  --acc: var(--state);
+  --acc-glow: var(--state-glow);
+  background: oklch(0.72 0.255 142 / 0.08);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  color: var(--acc);
+  box-shadow:
+    inset 0 0 0 1px var(--acc),
+    inset 0 1px 0 oklch(1 0 0 / 0.12),
+    0 6px 18px -8px var(--acc-glow);
   text-decoration: none;
   font-family: var(--f-mono);
   font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
-  transition: color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  transition: color .2s ease, transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 .btt-divider a:hover {
-  color: var(--acc);
-  border-color: var(--acc);
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px -14px var(--acc-glow);
+  transform: translateY(-1px);
+  background: oklch(0.72 0.255 142 / 0.12);
+  box-shadow:
+    inset 0 0 0 1px var(--acc),
+    inset 0 1px 0 oklch(1 0 0 / 0.16),
+    0 14px 30px -10px var(--acc-glow);
 }
 .btt-divider .mini-mark {
-  height: 18px; width: auto; opacity: 0.9; display: block;
+  height: 18px; width: 18px; opacity: 0.9; display: block;
+  background: transparent;
+  object-fit: contain;
 }
 .btt-divider .arrow-circle {
   width: 22px; height: 22px; border-radius: 999px;
@@ -2324,31 +2334,35 @@ img, svg { display: block; max-width: 100%; }
 
 /* ========== Tweaks: Light "premium luxe" theme ========== */
 [data-theme="light"] {
-  --bg: oklch(0.97 0.005 75);
-  --bg-deep: oklch(0.93 0.006 75);
-  --bg-elev: oklch(0.98 0.005 75);
-  --panel: oklch(1 0 0 / 0.55);
-  --panel-2: oklch(1 0 0 / 0.4);
+  /* Pure white, true-neutral light theme — clean & modern */
+  --bg: oklch(1 0 0);
+  --bg-deep: oklch(0.965 0 0);
+  --bg-elev: oklch(1 0 0);
+  --panel: oklch(1 0 0 / 0.6);
+  --panel-2: oklch(1 0 0 / 0.45);
   --line: oklch(0 0 0 / 0.08);
-  --line-strong: oklch(0 0 0 / 0.16);
+  --line-strong: oklch(0 0 0 / 0.14);
 
-  --fg: oklch(0.18 0.008 75);
-  --fg-2: oklch(0.36 0.01 75);
-  --fg-3: oklch(0.52 0.012 75);
-  --fg-4: oklch(0.65 0.012 75);
+  --fg: oklch(0.2 0 0);
+  --fg-2: oklch(0.4 0 0);
+  --fg-3: oklch(0.55 0 0);
+  --fg-4: oklch(0.68 0 0);
 }
 [data-theme="light"] body {
-  background:
-    radial-gradient(1200px 700px at 80% -10%, oklch(0.86 0.12 145 / 0.14), transparent 60%),
-    radial-gradient(900px 600px at -10% 30%, oklch(0.82 0.14 78 / 0.10), transparent 60%),
-    var(--bg);
+  background: var(--bg);
 }
+/* Kill the colored ambient orbs in light mode — keeps the background pure white */
+[data-theme="light"] .bg-orb { display: none; }
+/* No background grid in light mode — keep it clean */
+[data-theme="light"] .bg-grid { display: none; }
 [data-theme="light"] .bg-grid {
   background-image:
     linear-gradient(to right, oklch(0 0 0 / 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, oklch(0 0 0 / 0.04) 1px, transparent 1px);
 }
 [data-theme="light"] .nav-cta { color: oklch(0.48 0.16 142); }
+/* Back-to-top pill matches the nav Contact pill in light mode: green glass + darkened text */
+[data-theme="light"] .btt-divider a { color: oklch(0.48 0.16 142); }
 [data-theme="light"] .btn-primary { color: oklch(0.15 0.01 75); }
 [data-theme="light"] ::-webkit-scrollbar-track { background: var(--bg-deep); }
 [data-theme="light"] ::-webkit-scrollbar-thumb { background: oklch(0.8 0.01 75); }

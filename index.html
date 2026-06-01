@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260601" />
   <script>
     // Apply saved theme before render to avoid a flash
     (function () {
@@ -1461,25 +1461,41 @@
           display: inline-flex; align-items: center; gap: 14px;
           margin: 0 28px;
           padding: 12px 22px;
-          border: 1px solid var(--line, rgba(255,255,255,0.08));
           border-radius: 999px;
-          background: rgba(40, 48, 44, 0.6);
-          backdrop-filter: blur(10px) saturate(140%);
-          -webkit-backdrop-filter: blur(10px) saturate(140%);
-          color: var(--fg-2, #c8cdc9);
+          /* Match the top-nav Contact pill — green glassmorphism */
+          --acc: var(--state, #2ecc71);
+          --acc-glow: var(--state-glow, rgba(0, 204, 0, 0.45));
+          background: oklch(0.72 0.255 142 / 0.08);
+          backdrop-filter: blur(14px) saturate(140%);
+          -webkit-backdrop-filter: blur(14px) saturate(140%);
+          color: var(--acc);
+          box-shadow:
+            inset 0 0 0 1px var(--acc),
+            inset 0 1px 0 oklch(1 0 0 / 0.12),
+            0 6px 18px -8px var(--acc-glow);
           text-decoration: none;
           font-family: var(--f-mono, "JetBrains Mono", ui-monospace, monospace);
           font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
-          transition: color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+          transition: color .2s ease, transform .2s ease, box-shadow .2s ease, background .2s ease;
         }
         .btt-divider a:hover {
-          color: var(--acc, #00cc00);
-          border-color: var(--acc, #00cc00);
-          transform: translateY(-2px);
-          box-shadow: 0 14px 30px -14px var(--acc-glow, rgba(0, 204, 0, 0.45));
+          transform: translateY(-1px);
+          background: oklch(0.72 0.255 142 / 0.12);
+          box-shadow:
+            inset 0 0 0 1px var(--acc),
+            inset 0 1px 0 oklch(1 0 0 / 0.16),
+            0 14px 30px -10px var(--acc-glow);
+        }
+        /* Match the top-nav Contact pill in light mode: keep the green glass,
+           only darken the text. (Previously forced a solid-white background,
+           which made it look unlike the nav pill.) */
+        [data-theme="light"] .btt-divider a {
+          color: oklch(0.48 0.16 142);
         }
         .btt-divider .mini-mark {
-          height: 18px; width: auto; opacity: 0.9; display: block;
+          height: 18px; width: 18px; opacity: 0.9; display: block;
+          background: transparent;
+          object-fit: contain;
         }
         .btt-divider .arrow-circle {
           width: 22px; height: 22px; border-radius: 999px;
@@ -1499,7 +1515,7 @@
       </style>
       <div class="btt-divider">
         <a href="#top" aria-label="Back to top of page">
-          <img class="mini-mark" src="assets/clockchain-logo.png" alt="" aria-hidden="true" width="18" height="18" />
+          <img class="mini-mark" src="assets/clockchain-mark-transparent.png" alt="" aria-hidden="true" width="18" height="18" />
           <span>Back to top</span>
           <span class="arrow-circle">
             <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -1527,10 +1543,10 @@
     </div>
   </footer>
 
-  <script src="kinetic.js"></script>
-  <script src="tweaks.js"></script>
-  <script src="news-modal.js"></script>
-  <script src="earth-pins.js"></script>
+  <script src="kinetic.js?v=20260601"></script>
+  <script src="tweaks.js?v=20260601"></script>
+  <script src="news-modal.js?v=20260601"></script>
+  <script src="earth-pins.js?v=20260601"></script>
   <script>
     // Theme toggle (nav button) — persists user choice to localStorage
     (function () {
